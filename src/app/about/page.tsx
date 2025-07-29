@@ -1,4 +1,3 @@
-// app/about/page.tsx or pages/about.tsx (depending on file structure)
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import PersonalProfile from "@/lib/Images/ProfileCard.png";
@@ -10,7 +9,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Code, MessageCircleHeart, Paintbrush, ThumbsUp } from "lucide-react";
+import {
+  Code,
+  MessageCircleHeart,
+  Paintbrush,
+  ThumbsUp,
+} from "lucide-react";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -18,10 +22,10 @@ export default function AboutPage() {
   return (
     <div className={`min-h-screen flex flex-col px-4 sm:px-6 md:px-8 lg:px-16 py-16 ${inter.variable} font-sans`}>
       {/* Hero Section */}
-      <section className="text-center mb-24">
+      <section className="text-center my-24">
         <div className="w-full max-w-4xl mx-auto">
-          <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight text-pretty">
-            Take a Step Into My Journey
+          <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight text-balance">
+            Take a Step Into  <span className="text-[#7A382B]">My Journey</span>
           </h1>
           <p className="mt-4 text-base sm:text-lg md:text-xl text-gray-600 tracking-wide leading-relaxed max-w-2xl mx-auto">
             Let me show you the skills and work I’ve developed so far. Let’s explore how I can bring value to your team.
@@ -32,9 +36,7 @@ export default function AboutPage() {
       {/* About Section */}
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="text-center lg:text-left max-w-3xl mx-auto lg:mx-0">
-          <h2 className="text-3xl sm:text-4xl font-bold leading-tight tracking-tight text-pretty mb-6">
-            About Me
-          </h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">About <span className="text-[#7A382B]">Me</span></h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 tracking-wide leading-relaxed">
             Hi, I’m Kevin Kurt Intong — a recent BSIT graduate from the University of the Immaculate Conception, with a specialization in healthcare technology. I’m passionate about designing clean, functional, and meaningful digital experiences that put users first.
             <br /><br />
@@ -59,75 +61,51 @@ export default function AboutPage() {
 
       {/* Skills Section */}
       <section className="my-24">
+        <h1 className="text-3xl sm:text-4xl font-bold mb-12 tracking-tight text-balance">Skills</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <h1 className="text-3xl sm:text-4xl font-bold leading-tight tracking-tight text-pretty md:col-span-2">
-            Skills
-          </h1>
-
-          <div className="flex flex-col space-y-2 my-8">
-            <Avatar>
-              <Paintbrush className="w-8 h-8" />
-            </Avatar>
-            <h2 className="text-base sm:text-xl font-semibold tracking-wide leading-relaxed">
-              Design-Driven Thinking
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 tracking-wide leading-relaxed">
-              I design with empathy and clarity—especially for users who need things simple and intuitive. Every screen I create is backed by real-world user feedback and crafted to reduce friction, not just look good.
-            </p>
-          </div>
-
-          <div className="flex flex-col space-y-2 my-8">
-            <Avatar>
-              <ThumbsUp className="w-8 h-8" />
-            </Avatar>
-            <h2 className="text-base sm:text-xl font-semibold tracking-wide leading-relaxed">
-              Feedback-Driven Growth
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 tracking-wide leading-relaxed">
-              I don’t take feedback personally—I treat it as UX gold. I iterate fast, test with intent, and constantly refine based on what works, not just what looks nice.
-            </p>
-          </div>
-
-          <div className="flex flex-col space-y-2 my-8">
-            <Avatar>
-              <Code className="w-8 h-8" />
-            </Avatar>
-            <h2 className="text-base sm:text-xl font-semibold tracking-wide leading-relaxed">
-              Dev-Ready Collaboration
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 tracking-wide leading-relaxed">
-              With a background in frontend (React, Tailwind), I speak developer fluently. I design with real components in mind, making handoffs smoother and implementation faster—with fewer surprises in dev.
-            </p>
-          </div>
-
-          <div className="flex flex-col space-y-2 my-8">
-            <Avatar>
-              <MessageCircleHeart className="w-8 h-8" />
-            </Avatar>
-            <h2 className="text-base sm:text-xl font-semibold tracking-wide leading-relaxed">
-              Empathy & Communication
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 tracking-wide leading-relaxed">
-              I ask, listen, and adapt. Whether it’s a user, a stakeholder, or a teammate, I make sure conversations are clear and feedback loops are short—so everyone stays aligned and projects move forward.
-            </p>
-          </div>
+          {[
+            {
+              icon: <Paintbrush className="w-8 h-8" />,
+              title: "Design-Driven Thinking",
+              text: "I design with empathy and clarity—especially for users who need things simple and intuitive. Every screen I create is backed by real-world user feedback and crafted to reduce friction, not just look good.",
+            },
+            {
+              icon: <ThumbsUp className="w-8 h-8" />,
+              title: "Feedback-Driven Growth",
+              text: "I don’t take feedback personally—I treat it as UX gold. I iterate fast, test with intent, and constantly refine based on what works, not just what looks nice.",
+            },
+            {
+              icon: <Code className="w-8 h-8" />,
+              title: "Dev-Ready Collaboration",
+              text: "With a background in frontend (React, Tailwind), I speak developer fluently. I design with real components in mind, making handoffs smoother and implementation faster—with fewer surprises in dev.",
+            },
+            {
+              icon: <MessageCircleHeart className="w-8 h-8" />,
+              title: "Empathy & Communication",
+              text: "I ask, listen, and adapt. Whether it’s a user, a stakeholder, or a teammate, I make sure conversations are clear and feedback loops are short—so everyone stays aligned and projects move forward.",
+            },
+          ].map(({ icon, title, text }, index) => (
+            <div key={index} className="flex flex-col space-y-2">
+              <Avatar>{icon}</Avatar>
+              <h2 className="text-base sm:text-xl font-semibold tracking-wide leading-relaxed">{title}</h2>
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 tracking-wide leading-relaxed">{text}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Awards & Experience */}
+      {/* Awards & Experience Section */}
       <section className="mt-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div className="space-y-2">
-            <h1 className="text-3xl sm:text-4xl font-bold leading-tight tracking-tight text-pretty">
-              Awards & Certification
-            </h1>
+          <div className="space-y-4">
+            <h1 className="text-3xl sm:text-4xl font-bold">Awards & Certification</h1>
             {[...Array(4)].map((_, i) => (
               <Accordion type="single" collapsible key={i}>
-                <AccordionItem value={`item-${i}`}>
-                  <AccordionTrigger className="text-base sm:text-xl font-semibold tracking-wide leading-relaxed">
+                <AccordionItem value={`award-${i}`}>
+                  <AccordionTrigger className="text-base sm:text-xl font-semibold">
                     Bronze Medalist – Graphic Design
                   </AccordionTrigger>
-                  <AccordionContent className="text-base sm:text-lg md:text-xl text-gray-600 tracking-wide leading-relaxed">
+                  <AccordionContent className="text-base sm:text-lg md:text-xl text-gray-600">
                     Bronze Medalist – Graphic Design
                   </AccordionContent>
                 </AccordionItem>
@@ -135,16 +113,14 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <div className="space-y-2">
-            <h1 className="text-3xl sm:text-4xl font-bold leading-tight tracking-tight text-pretty">
-              Experiences
-            </h1>
+          <div className="space-y-4">
+            <h1 className="text-3xl sm:text-4xl font-bold">Experiences</h1>
             <Accordion type="single" collapsible>
-              <AccordionItem value="item-5">
-                <AccordionTrigger>
+              <AccordionItem value="exp-1">
+                <AccordionTrigger className="text-base sm:text-xl font-semibold">
                   Champion – Davao Startup Competition 2023
                 </AccordionTrigger>
-                <AccordionContent>
+                <AccordionContent className="text-base sm:text-lg md:text-xl text-gray-600">
                   Yes. It adheres to the WAI-ARIA design pattern.
                 </AccordionContent>
               </AccordionItem>
