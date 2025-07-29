@@ -1,15 +1,19 @@
+'use client';
 import { Button } from "@/components/ui/button";
+import { Inter } from "next/font/google";
 import {Card,} from "@/components/ui/card";
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 import Image from "next/image";
 import MindspaceImg from "@/lib/Images/Mindspace.png";
 import IslandBoiImg from "@/lib/Images/IslandBoi.png";
 
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+
 export default function HomePage() {
   return (
-    <div className="min-h-screen flex flex-col px-4 sm:px-6 md:px-8 lg:px-16 py-8 gap-16">
+    <div className={`min-h-screen flex flex-col px-4 sm:px-6 md:px-8 lg:px-16 py-8 gap-16 ${inter.variable} font-sans`}>
       {/* Hero Section */}
-      <section className="flex flex-col lg:flex-row justify-between items-start gap-12 mt-42 mb-96">
+      <section className="flex flex-col lg:flex-row justify-between items-start gap-12 lg:mt-42 lg:mb-96 md:mt-32 md:mb-64 sm:mt-24 sm:mb-48">
         <div className="flex-1">
           <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight text-pretty">
             Hi! I’m Kevin, a <br />
