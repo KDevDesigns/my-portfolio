@@ -1,4 +1,4 @@
-export default function (){
+export default function Footer (){
     return(
         <div className="flex flex-col border-t-2 border-solid items-center  py-12 ">
             <div className="grow justify-center">

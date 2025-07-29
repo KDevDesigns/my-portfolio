@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Navigation } from "lucide-react";
 import NavigationBar from "@/components/custom ui/navbar";
 import Footer from "@/components/custom ui/footer"
 
