@@ -63,7 +63,18 @@ export default function HomePage() {
                 MindSpace is a modular mental health interface designed to reduce user overwhelm and increase engagement.
                 I focused on minimalist navigation, guided interaction flows, and a calm color system—all optimized for accessibility and cognitive ease.
               </p>
-              <Button className="w-fit bg-[#7A382B] hover:bg-[#5f2e23] text-white">View Prototype</Button>
+                <Button
+                  asChild
+                  className="w-fit bg-[#7A382B] hover:bg-[#5f2e23] text-white"
+                >
+                  <a
+                  href="https://www.figma.com/proto/T1gjtsTnaF4AHthuB8ArUc/Project-MindSpace?page-id=0%3A1&node-id=2-5&viewport=1058%2C884%2C0.14&t=bbVjfVvQSMGqBngj-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2%3A5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >
+                  View Prototype
+                  </a>
+                </Button>
             </div>
           </div>
 
