@@ -16,9 +16,13 @@ export function CustomContactMe() {
     message: "",
   });
 
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error" | "invalid-email">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error" | "invalid-email"
+  >("idle");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -32,19 +36,16 @@ export function CustomContactMe() {
 
   const validateEmail = async (email: string) => {
     try {
-      const res = await fetch(
-        `https://emailvalidation.abstractapi.com/v1/?api_key=${process.env.NEXT_PUBLIC_ABSTRACT_API_KEY}&email=${email}`
-      );
-      const data = await res.json();
+      const res = await fetch("/api/validate-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
 
-      return (
-        data.is_valid_format.value &&
-        data.is_mx_found.value &&
-        data.is_smtp_valid.value &&
-        !data.is_disposable_email.value
-      );
+      const data = await res.json();
+      return data.valid;
     } catch (err) {
-      console.error("Email validation error", err);
+      console.error("Email validation error:", err);
       return false;
     }
   };
@@ -80,7 +81,10 @@ export function CustomContactMe() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-3xl mx-auto p-4 sm:p-6 lg:p-8 space-y-8 font-sans">
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-3xl mx-auto p-4 sm:p-6 lg:p-8 space-y-8 font-sans"
+    >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
           <Label htmlFor="firstname">First Name</Label>
@@ -152,7 +156,9 @@ export function CustomContactMe() {
         <Alert variant="destructive">
           <AlertTriangle className="h-5 w-5" />
           <AlertTitle>Submission failed</AlertTitle>
-          <AlertDescription>There was a problem sending your message.</AlertDescription>
+          <AlertDescription>
+            There was a problem sending your message.
+          </AlertDescription>
         </Alert>
       )}
       {status === "invalid-email" && (
