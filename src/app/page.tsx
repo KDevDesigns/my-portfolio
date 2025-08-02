@@ -12,7 +12,6 @@ import {
   AlertDialogTitle,
   AlertDialogFooter,
   AlertDialogCancel,
-  AlertDialogAction,
 } from "@/components/ui/alert-dialog";
 import Image from "next/image";
 import MindspaceImg from "@/lib/Images/Mindspace.png";

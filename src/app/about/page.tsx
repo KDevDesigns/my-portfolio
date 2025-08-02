@@ -27,7 +27,8 @@ export default function AboutPage() {
             Take a Step Into <span className="text-[#7A382B]">My Journey</span>
           </h1>
           <p className="mt-4 text-base sm:text-lg md:text-xl text-gray-600 tracking-wide leading-relaxed max-w-2xl mx-auto">
-            Discover the experiences, skills, and projects that shaped my path. Here's how I can contribute meaningfully to your team.
+            Discover the experiences, skills, and projects that shaped my path.
+            Here's how I can contribute meaningfully to your team.
           </p>
         </div>
       </section>
@@ -39,11 +40,22 @@ export default function AboutPage() {
             About <span className="text-[#7A382B]">Me</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 tracking-wide leading-relaxed">
-            Hi, I'm Kevin Kurt Intong, a BS Information Technology graduate from the University of the Immaculate Conception, specializing in healthcare technology. I'm passionate about building digital experiences that are purposeful, intuitive, and user-centric.
-            <br /><br />
-            My journey revolves around transforming complex healthcare challenges into seamless digital solutions. By fusing strategy with frontend expertise, I create interfaces that are both aesthetically refined and functionally powerful.
-            <br /><br />
-            As a designer-developer hybrid, I ensure that every design decision aligns with development realities—ready for handoff, collaboration, and iteration. I thrive in environments that champion clarity, teamwork, and a relentless focus on the user.
+            Hi, I&apos;m Kevin Kurt Intong, a BS Information Technology graduate
+            from the University of the Immaculate Conception, specializing in
+            healthcare technology. I&apos;m passionate about building digital
+            experiences that are purposeful, intuitive, and user-centric.
+            <br />
+            <br />
+            My journey revolves around transforming complex healthcare
+            challenges into seamless digital solutions. By fusing strategy with
+            frontend expertise, I create interfaces that are both aesthetically
+            refined and functionally powerful.
+            <br />
+            <br />
+            As a designer-developer hybrid, I ensure that every design decision
+            aligns with development realities—ready for handoff, collaboration,
+            and iteration. I thrive in environments that champion clarity,
+            teamwork, and a relentless focus on the user.
           </p>
         </div>
 
@@ -137,7 +149,9 @@ export default function AboutPage() {
               </Accordion>
             ))}
 
-            <h1 className="text-3xl sm:text-4xl font-bold pt-8">Certifications</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold pt-8">
+              Certifications
+            </h1>
             <Separator className="my-4" />
             {[
               {
@@ -182,7 +196,12 @@ export default function AboutPage() {
                   Generalist UI/UX Designer – CancerLine Companion
                 </AccordionTrigger>
                 <AccordionContent className="text-base sm:text-lg md:text-xl text-gray-600">
-                  Contributed to CancerLine Companion, a Davao-based startup, as a generalist UI/UX designer for 1 year and 5 months. Led the full design lifecycle—including research, wireframes, prototypes, usability testing, and branding. Co-developed a production-ready mobile app, significantly improving usability through continuous iteration and feedback.
+                  Contributed to CancerLine Companion, a Davao-based startup, as
+                  a generalist UI/UX designer for 1 year and 5 months. Led the
+                  full design lifecycle—including research, wireframes,
+                  prototypes, usability testing, and branding. Co-developed a
+                  production-ready mobile app, significantly improving usability
+                  through continuous iteration and feedback.
                 </AccordionContent>
                 <Separator />
               </AccordionItem>
