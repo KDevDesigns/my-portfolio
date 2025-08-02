@@ -4,9 +4,21 @@ import { Inter } from "next/font/google";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
+import {
+  AlertDialog,
+  AlertDialogTrigger,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogFooter,
+  AlertDialogCancel,
+  AlertDialogAction,
+} from "@/components/ui/alert-dialog";
 import Image from "next/image";
 import MindspaceImg from "@/lib/Images/Mindspace.png";
 import IslandBoiImg from "@/lib/Images/IslandBoi.png";
+import CancerLineImg from "@/lib/Images/CancerLine.png";
+import { Lock } from "lucide-react";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -48,8 +60,8 @@ export default function HomePage() {
               <Card>
                 <AspectRatio ratio={16 / 9}>
                   <Image
-                    src={IslandBoiImg}
-                    alt="IslandBoi UI preview"
+                    src={MindspaceImg}
+                    alt="Mindspace UI preview"
                     fill
                     style={{ objectFit: "contain" }}
                     priority
@@ -60,21 +72,23 @@ export default function HomePage() {
             <div className="md:w-1/2 flex flex-col justify-center gap-4">
               <h3 className="text-2xl sm:text-3xl font-bold">MindSpace</h3>
               <p className="text-gray-500 text-sm sm:text-base leading-relaxed">
-                MindSpace is a modular mental health interface designed to reduce user overwhelm and increase engagement.
-                I focused on minimalist navigation, guided interaction flows, and a calm color system—all optimized for accessibility and cognitive ease.
+                MindSpace is a modular mental health interface designed to
+                reduce user overwhelm and increase engagement. I focused on
+                minimalist navigation, guided interaction flows, and a calm
+                color system—all optimized for accessibility and cognitive ease.
               </p>
-                <Button
-                  asChild
-                  className="w-fit bg-[#7A382B] hover:bg-[#5f2e23] text-white"
-                >
-                  <a
+              <Button
+                asChild
+                className="w-fit bg-[#7A382B] hover:bg-[#5f2e23] text-white"
+              >
+                <a
                   href="https://www.figma.com/proto/T1gjtsTnaF4AHthuB8ArUc/Project-MindSpace?page-id=0%3A1&node-id=2-5&viewport=1058%2C884%2C0.14&t=bbVjfVvQSMGqBngj-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2%3A5"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >
+                >
                   View Prototype
-                  </a>
-                </Button>
+                </a>
+              </Button>
             </div>
           </div>
 
@@ -84,7 +98,7 @@ export default function HomePage() {
               <Card>
                 <AspectRatio ratio={16 / 9}>
                   <Image
-                    src={MindspaceImg}
+                    src={CancerLineImg}
                     alt="MindSpace UI preview"
                     fill
                     style={{ objectFit: "contain" }}
@@ -94,12 +108,43 @@ export default function HomePage() {
               </Card>
             </div>
             <div className="md:w-1/2 flex flex-col justify-center gap-4">
-              <h3 className="text-2xl sm:text-3xl font-bold">CancerLine Companion</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold">
+                CancerLine Companion
+              </h3>
               <p className="text-gray-500 text-sm sm:text-base leading-relaxed">
-                CancerLine Companion helps cancer patients navigate their treatment with confidence.
-                I designed a clear, guided interface with empathetic tone, visualized timelines, and actionable next steps—ensuring accessibility across all literacy levels.
+                CancerLine Companion helps cancer patients navigate their
+                treatment with confidence. I designed a clear, guided interface
+                with empathetic tone, visualized timelines, and actionable next
+                steps—ensuring accessibility across all literacy levels.
               </p>
-              <Button className="w-fit bg-[#7A382B] hover:bg-[#5f2e23] text-white">View Prototype</Button>
+              <AlertDialog>
+                <AlertDialogTrigger asChild>
+                  <Button
+                    asChild
+                    className="w-fit bg-[#7A382B] hover:bg-[#5f2e23] text-white flex items-center gap-2"
+                  >
+                    <span>View Prototype</span>
+                  </Button>
+                </AlertDialogTrigger>
+                <AlertDialogContent className="rounded-2xl border border-gray-200 bg-white p-6 shadow-xl max-w-md">
+                  <AlertDialogHeader>
+                    <AlertDialogTitle className="text-lg font-semibold text-[#7A382B] flex items-center gap-2">
+                      <Lock className="w-5 h-5" /> Limited Access Notice
+                    </AlertDialogTitle>
+                  </AlertDialogHeader>
+                  <p className="text-gray-600 text-sm leading-relaxed mt-2">
+                    This project is under a Non-Disclosure Agreement (NDA). Only
+                    limited, non-sensitive portions are available for public
+                    viewing. For full access or further details, please reach
+                    out directly.
+                  </p>
+                  <AlertDialogFooter className="mt-6">
+                    <AlertDialogCancel className="bg-gray-200 text-gray-700 hover:bg-gray-300 rounded-md px-4 py-2">
+                      Close
+                    </AlertDialogCancel>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
             </div>
           </div>
 
@@ -109,8 +154,8 @@ export default function HomePage() {
               <Card>
                 <AspectRatio ratio={16 / 9}>
                   <Image
-                    src={MindspaceImg}
-                    alt="Cicada Hills preview"
+                    src={IslandBoiImg}
+                    alt="IslandBoi preview"
                     fill
                     style={{ objectFit: "contain" }}
                     priority
@@ -119,11 +164,16 @@ export default function HomePage() {
               </Card>
             </div>
             <div className="md:w-1/2 flex flex-col justify-center gap-4">
-              <h3 className="text-2xl sm:text-3xl font-bold">Cicada Hills</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold">IslandBoi</h3>
               <p className="text-gray-500 text-sm sm:text-base leading-relaxed">
-                Cicada Hills is a real estate experience reimagined. I crafted a responsive, mobile-first platform blending nature-inspired visuals with high-conversion UX flows.
+                Island Boi is a beachhouse brand looking to establish a stronger
+                online presence and attract more direct bookings. I was brought
+                in to design and build a clean, responsive website with a custom
+                booking form — setting the foundation for future growth.
               </p>
-              <Button className="w-fit bg-[#7A382B] hover:bg-[#5f2e23] text-white">View Prototype</Button>
+              <Button className="w-fit bg-[#7A382B] hover:bg-[#5f2e23] text-white">
+                View Prototype
+              </Button>
             </div>
           </div>
         </div>
