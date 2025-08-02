@@ -28,7 +28,7 @@ export default function AboutPage() {
           </h1>
           <p className="mt-4 text-base sm:text-lg md:text-xl text-gray-600 tracking-wide leading-relaxed max-w-2xl mx-auto">
             Discover the experiences, skills, and projects that shaped my path.
-            Here's how I can contribute meaningfully to your team.
+            Here&#39;s how I can contribute meaningfully to your team.
           </p>
         </div>
       </section>
@@ -40,10 +40,11 @@ export default function AboutPage() {
             About <span className="text-[#7A382B]">Me</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 tracking-wide leading-relaxed">
-            Hi, I&apos;m Kevin Kurt Intong, a BS Information Technology graduate
-            from the University of the Immaculate Conception, specializing in
-            healthcare technology. I&apos;m passionate about building digital
-            experiences that are purposeful, intuitive, and user-centric.
+            Hi, I&#39;m Kevin Kurt Intong , a BS Information Technology
+            graduate from the University of the Immaculate Conception,
+            specializing in healthcare technology. I&#39;m passionate about
+            building digital experiences that are purposeful, intuitive, and
+            user-centric.
             <br />
             <br />
             My journey revolves around transforming complex healthcare
