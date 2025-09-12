@@ -14,17 +14,21 @@ import {
   AlertDialogCancel,
 } from "@/components/ui/alert-dialog";
 import Image from "next/image";
-import MindspaceImg from "@/lib/Images/Mindspace.png";
-import IslandBoiImg from "@/lib/Images/IslandBoi.png";
-import CancerLineImg from "@/lib/Images/CancerLine.png";
+import CicadaHills from "@/lib/Cicada Hills/CoverCicadaHills.svg";
+import ITSO from "@/lib/ITSO/CoverITSO.svg";
+import CancerLine from "@/lib/CancerLine Companion/CoverCancerLine.svg";
 import { Lock } from "lucide-react";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { motion } from "framer-motion";
+import ProjectCard from "@/components/custom ui/ProjectCard";
+
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export default function HomePage() {
   return (
     <div
-      className={`min-h-screen flex flex-col px-4 sm:px-6 md:px-8 lg:px-16 py-8 gap-16 ${inter.variable} font-sans `}
+      className={`min-h-screen flex flex-col px-10 sm:px-20 md:px-24 lg:px-28 py-8 gap-16 ${inter.variable} font-sans `}
     >
       {/* Hero Section */}
       <section className="flex flex-col lg:flex-row justify-between items-start gap-12 mt-16 lg:mt-32 mb-16 lg:mb-32">
@@ -48,134 +52,101 @@ export default function HomePage() {
           </h2>
           <p className="text-gray-600 text-base sm:text-lg md:text-xl max-w-2xl">
             See how I turn complexity into clarity. Browse case studies. <br />
-            Experience the prototypes.
+            Explore web, mobile, and brand work.
           </p>
         </div>
 
-        <div className="flex flex-col gap-24">
-          {/* Project Row 1 */}
-          <div className="flex flex-col md:flex-row-reverse gap-12">
-            <div className="md:w-1/2">
-              <Card>
-                <AspectRatio ratio={16 / 9}>
-                  <Image
-                    src={MindspaceImg}
-                    alt="Mindspace UI preview"
-                    fill
-                    style={{ objectFit: "contain" }}
-                    priority
-                  />
-                </AspectRatio>
-              </Card>
-            </div>
-            <div className="md:w-1/2 flex flex-col justify-center gap-4">
-              <h3 className="text-2xl sm:text-3xl font-bold">MindSpace</h3>
-              <p className="text-gray-500 text-sm sm:text-base leading-relaxed">
-                MindSpace is a modular mental health interface designed to
-                reduce user overwhelm and increase engagement. I focused on
-                minimalist navigation, guided interaction flows, and a calm
-                color system—all optimized for accessibility and cognitive ease.
-              </p>
-              <Button
-                asChild
-                className="w-fit bg-[#7A382B] hover:bg-[#5f2e23] text-white"
-              >
-                <a
-                  href="https://www.figma.com/proto/T1gjtsTnaF4AHthuB8ArUc/Project-MindSpace?page-id=0%3A1&node-id=2-5&viewport=1058%2C884%2C0.14&t=bbVjfVvQSMGqBngj-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2%3A5"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Prototype
-                </a>
-              </Button>
-            </div>
-          </div>
+        <Tabs defaultValue="case-studies" className="w-full">
+          <TabsList className="flex flex-wrap gap-2">
+            <TabsTrigger value="case-studies">Case Studies</TabsTrigger>
+            <TabsTrigger value="web-mobile">Web & Mobile</TabsTrigger>
+            <TabsTrigger value="branding">Branding</TabsTrigger>
+            <TabsTrigger value="playground">Playground</TabsTrigger>
+          </TabsList>
 
-          {/* Project Row 2 */}
-          <div className="flex flex-col md:flex-row gap-12">
-            <div className="md:w-1/2">
-              <Card>
-                <AspectRatio ratio={16 / 9}>
-                  <Image
-                    src={CancerLineImg}
-                    alt="MindSpace UI preview"
-                    fill
-                    style={{ objectFit: "contain" }}
-                    priority
-                  />
-                </AspectRatio>
-              </Card>
-            </div>
-            <div className="md:w-1/2 flex flex-col justify-center gap-4">
-              <h3 className="text-2xl sm:text-3xl font-bold">
-                CancerLine Companion
-              </h3>
-              <p className="text-gray-500 text-sm sm:text-base leading-relaxed">
-                CancerLine Companion helps cancer patients navigate their
-                treatment with confidence. I designed a clear, guided interface
-                with empathetic tone, visualized timelines, and actionable next
-                steps—ensuring accessibility across all literacy levels.
-              </p>
-              <AlertDialog>
-                <AlertDialogTrigger asChild>
-                  <Button
-                    asChild
-                    className="w-fit bg-[#7A382B] hover:bg-[#5f2e23] text-white flex items-center gap-2"
-                  >
-                    <span>View Prototype</span>
-                  </Button>
-                </AlertDialogTrigger>
-                <AlertDialogContent className="rounded-2xl border border-gray-200 bg-white p-6 shadow-xl max-w-md">
-                  <AlertDialogHeader>
-                    <AlertDialogTitle className="text-lg font-semibold text-[#7A382B] flex items-center gap-2">
-                      <Lock className="w-5 h-5" /> Limited Access Notice
-                    </AlertDialogTitle>
-                  </AlertDialogHeader>
-                  <p className="text-gray-600 text-sm leading-relaxed mt-2">
-                    This project is under a Non-Disclosure Agreement (NDA). Only
-                    limited, non-sensitive portions are available for public
-                    viewing. For full access or further details, please reach
-                    out directly.
-                  </p>
-                  <AlertDialogFooter className="mt-6">
-                    <AlertDialogCancel className="bg-gray-200 text-gray-700 hover:bg-gray-300 rounded-md px-4 py-2">
-                      Close
-                    </AlertDialogCancel>
-                  </AlertDialogFooter>
-                </AlertDialogContent>
-              </AlertDialog>
-            </div>
-          </div>
+          {/* Case Studies */}
+          <TabsContent value="case-studies" className="mt-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="grid grid-cols-1 md:grid-cols-2 gap-12"
+            >
+              <ProjectCard
+                title="Cicada Hills"
+                desc="Modular mental health interface reducing overwhelm and boosting engagement through guided flows."
+                image={CicadaHills}
+                link="/casestudy/CicadaHills"
+              />
 
-          {/* Project Row 3 */}
-          <div className="flex flex-col md:flex-row-reverse gap-12">
-            <div className="md:w-1/2">
-              <Card>
-                <AspectRatio ratio={16 / 9}>
-                  <Image
-                    src={IslandBoiImg}
-                    alt="IslandBoi preview"
-                    fill
-                    style={{ objectFit: "contain" }}
-                    priority
-                  />
-                </AspectRatio>
+              <ProjectCard
+                title="CancerLine Companion"
+                desc="CancerLine Companion helps cancer patients navigate treatment with confidence using guided flows and accessible design."
+                image={CancerLine}
+                locked
+              />
+
+              <ProjectCard
+                title="ITSO"
+                desc="A beachhouse brand website designed to attract more direct bookings through a clean UI and custom form."
+                image={ITSO}
+                link="/casestudy/ITSO"
+              />
+               <ProjectCard
+                title="ITSO"
+                desc="A beachhouse brand website designed to attract more direct bookings through a clean UI and custom form."
+                image={ITSO}
+                link="#"
+              />
+            </motion.div>
+          </TabsContent>
+
+          {/* Web & Mobile */}
+          <TabsContent value="web-mobile" className="mt-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="grid grid-cols-1 md:grid-cols-2 gap-12"
+            >
+              <Card className="p-6 flex items-center justify-center">
+                <p className="text-gray-400">
+                  More mobile/web concepts coming soon…
+                </p>
               </Card>
-            </div>
-            <div className="md:w-1/2 flex flex-col justify-center gap-4">
-              <h3 className="text-2xl sm:text-3xl font-bold">IslandBoi</h3>
-              <p className="text-gray-500 text-sm sm:text-base leading-relaxed">
-                Island Boi is a beachhouse brand looking to establish a stronger
-                online presence and attract more direct bookings. I was brought
-                in to design and build a clean, responsive website with a custom
-                booking form — setting the foundation for future growth.
-              </p>
-              <Button className="w-fit bg-[#7A382B] hover:bg-[#5f2e23] text-white">
-                View Prototype
-              </Button>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </TabsContent>
+
+          {/* Branding */}
+          <TabsContent value="branding" className="mt-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-12"
+            >
+              <Card className="p-6 flex items-center justify-center">
+                <p className="text-gray-400">Branding projects coming soon…</p>
+              </Card>
+            </motion.div>
+          </TabsContent>
+
+          {/* Playground */}
+          <TabsContent value="playground" className="mt-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="grid grid-cols-1 md:grid-cols-2 gap-12"
+            >
+              <Card className="p-6 flex items-center justify-center">
+                <p className="text-gray-400">
+                  UI/UX experiments & animations soon…
+                </p>
+              </Card>
+            </motion.div>
+          </TabsContent>
+        </Tabs>
       </section>
     </div>
   );

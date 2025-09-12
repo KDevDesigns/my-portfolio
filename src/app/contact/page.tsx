@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import { CustomContactMe } from "@/components/custom ui/contactme";
+
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -17,7 +17,7 @@ export default function ContactPage() {
             Where visions align, delivering UX that’s simply divine.
           </h2>
         </div>
-        <CustomContactMe />
+
       </div>
     </div>
   );

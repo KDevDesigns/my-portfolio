@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import NavigationBar from "@/components/custom ui/navbar";
-import Footer from "@/components/custom ui/footer"
+
+// ✅ Import the client wrapper we’ll create
+import LayoutController from "@/components/LayoutController";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,7 +17,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "KevinDesigns",
-  description: "Created by KevinDesigns, a portfolio showcasing web development projects and designs.",
+  description:
+    "Created by KevinDesigns, a portfolio showcasing web development projects and designs.",
 };
 
 export default function RootLayout({
@@ -26,12 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased mx-4 sm:mx-6 md:mx-8 lg:mx-12 xl:mx-16`}
-      >
-        <NavigationBar/>
-        {children}
-        <Footer/>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        {/* ✅ Wrap everything in LayoutController so it can decide when to show Nav/Footer */}
+        <LayoutController>{children}</LayoutController>
       </body>
     </html>
   );
