@@ -1,4 +1,5 @@
-"user client";
+"use client";
+
 import Image from "next/image";
 import Cover from "../../../lib/Cicada Hills/CoverCicadaHills.svg";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -12,291 +13,260 @@ import Profile from "../../../lib/Images/Profile.png";
 import DesignSystem from "../../../lib/Cicada Hills/Design System/DesignSystem.svg";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-export default function CicadaHills () {
+
+export default function CicadaHills() {
   return (
-    <div className={`min-h-screen ${inter.variable} font-sans py-16`}>
-      <section className="min-h-screen w-full flex-col gap-12 items-center justify-center my-20 px-32">
-        <div className="flex-1">
-          <Image
-            className="h-full w-full object-cover"
-            src={Cover}
-            alt="Cicada Hills project screenshot"
-          />
-        </div>
-        <div className="flex flex-row gap-4 py-24">
-          <div className="flex-1/5 items-center ">
-            <div className="text-center">
-              <Avatar className="h-20 w-20 place-self-center">
-                <AvatarImage src={Profile.src} alt="@shadcn" />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
-              <ul className="py-8 px-16 text-wrap space-y-2 text-lg">
-                <li>
-                  <strong className="text-teal-700">Role:</strong> UI/UX
-                  Designer
-                </li>
-                <li>
-                  <strong className="text-teal-700">Responsibilities:</strong>{" "}
-                  Research, booking flow design, responsive website, admin
-                  dashboard, rebranding
-                </li>
-                <li>
-                  <strong className="text-teal-700">Approach:</strong> Design
-                  Thinking
-                </li>
-                <li>
-                  <strong className="text-teal-700">Outcome:</strong> Responsive
-                  website with 3-step booking, integrated payments, and a
-                  lightweight staff dashboard.
-                </li>
-              </ul>
+    <div className={`min-h-screen ${inter.variable} font-sans py-12 sm:py-16`}>
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-16">
+        {/* Hero / Cover + Summary */}
+        <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mt-8 lg:mt-12">
+          <div className="col-span-12 lg:col-span-8">
+            <div className="rounded-lg overflow-hidden shadow-sm">
+              <Image
+                src={Cover}
+                alt="Cicada Hills project screenshot"
+                className="w-full h-auto object-cover"
+                priority
+              />
             </div>
           </div>
 
-          <div className="flex-1/2 px-16">
-            <span className=" items-center justify-center rounded-full  text-teal-700 text-8xl py-1 ">
-              01{" "}
-            </span>
-            <h1 className="font-semibold text-4xl text-teal-700 my-2">
-              Project Overview & Challenge
-            </h1>
-            <p className="text-lg my-4 Leading-7">
-              Cicada Hills, a training center and event venue, relied heavily on
-              Facebook Messenger to manage bookings, payments, and client
-              communications. While functional at first, this approach became
-              inefficient as demand grew. Customers faced long back-and-forth
-              conversations to reserve dates, payments were confirmed via
-              screenshots, and staff lacked tools to track bookings or issue
-              refunds.
-            </p>
-            <div className="flex flex-row gap-2 justify-start">
-              <Badge className="bg-teal-700 rounded-full py-1 px-3 text-sm font-semibold border-none">
+          <aside className="col-span-12 lg:col-span-4 flex flex-col gap-6">
+            <div className="flex items-start gap-4">
+              <Avatar className="h-16 w-16 sm:h-20 sm:w-20">
+                <AvatarImage src={Profile.src} alt="Profile" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+
+              <div>
+                <h2 className="text-xl sm:text-2xl font-semibold">
+                  Kevin — UI/UX Designer
+                </h2>
+                <p className="text-sm sm:text-base text-gray-600 mt-1 max-w-xs">
+                  Design is not decoration — it’s acceleration. I ship systems that
+                  help people find answers quickly.
+                </p>
+              </div>
+            </div>
+
+            <ul className="text-sm sm:text-base space-y-2 text-gray-700">
+              <li>
+                <span className="font-semibold text-teal-700">Role:</span> UI/UX
+                Designer
+              </li>
+              <li>
+                <span className="font-semibold text-teal-700">
+                  Responsibilities:
+                </span>{" "}
+                Research, booking flow, responsive website, admin dashboard,
+                rebranding
+              </li>
+              <li>
+                <span className="font-semibold text-teal-700">Approach:</span>{" "}
+                Design Thinking
+              </li>
+              <li>
+                <span className="font-semibold text-teal-700">Outcome:</span>{" "}
+                3-step booking, integrated payments, lightweight staff dashboard
+              </li>
+            </ul>
+
+            <div className="flex flex-wrap gap-2">
+              <Badge className="bg-teal-700 text-white rounded-full py-1 px-3 text-sm font-semibold border-none">
                 Figma
               </Badge>
               <Badge className="bg-teal-100 text-teal-700 rounded-full py-1 px-3 text-sm font-semibold border-none">
                 Google Meet
               </Badge>
               <Badge className="bg-teal-100 text-teal-700 rounded-full py-1 px-3 text-sm font-semibold border-none">
-                Figjam
+                FigJam
               </Badge>
             </div>
+          </aside>
+        </section>
+
+        {/* Overview & Research */}
+        <section className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div className="col-span-12 lg:col-span-4 flex items-start">
+            <div className="text-teal-700 text-6xl sm:text-7xl font-bold">01</div>
           </div>
-        </div>
-      </section>
-      <section className="pb-32 px-32 text-lg">
-        <div className="px-16">
-          <span className=" items-center justify-center rounded-full  text-teal-700 text-8xl py-1 ">
-            02{" "}
-          </span>
-          <h1 className="font-semibold text-4xl text-teal-700 my-2">
-            Research & Insights
-          </h1>
-          <p className="text-lg my-4 Leading-7 mb-4">
-            To design a solution, I analyzed both customers and staff needs
-            through interviews and process reviews.
-          </p>
-        </div>
-        <div className="flex flex-col gap-16 px-16">
-          <div className="flex-col space-y-2 ">
-            <h1 className="font-semibold text-lg">User Groups</h1>
-            <ul>
-              <li className="mb-4">
-                <strong>Event Planners:</strong> Organizations arranging
-                training sessions and corporate events.
+
+          <div className="col-span-12 lg:col-span-8">
+            <h3 className="text-2xl sm:text-3xl font-semibold text-teal-700">
+              Project Overview & Challenge
+            </h3>
+            <p className="mt-4 text-base sm:text-lg text-gray-700 leading-relaxed">
+              Cicada Hills relied on Facebook Messenger for bookings and payments.
+              As demand grew the flow became inefficient — long back-and-forths,
+              manual payment confirmations, and no staff tooling to manage bookings
+              or refunds.
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h4 className="text-lg font-semibold mb-2">User Groups</h4>
+            <ul className="text-gray-700 space-y-3">
+              <li>
+                <strong>Event Planners:</strong> Organizations arranging training
+                sessions and corporate events.
               </li>
               <li>
                 <strong>Private Clients:</strong> Couples, families, and
-                individuals booking weddings, parties, or personal gatherings.
+                individuals booking events.
               </li>
             </ul>
           </div>
-          <div className="flex-col space-y-2">
-            <h1 className="font-semibold text-lg">Key Pain Points</h1>
-            <ul>
-              <li className="mb-4">Limited online presence beyond Facebook.</li>
-              <li className="mb-4">
-                Booking required lengthy Messenger conversations.
-              </li>
-              <li className="mb-4">
-                Payment confirmations handled through manual screenshots.
-              </li>
-              <li>
-                No centralized tool for staff to manage clients or refunds.
-              </li>
+
+          <div>
+            <h4 className="text-lg font-semibold mb-2">Key Pain Points</h4>
+            <ul className="text-gray-700 space-y-3">
+              <li>Limited presence beyond Facebook.</li>
+              <li>Lengthy Messenger bookings that block staff time.</li>
+              <li>Manual payment confirmations via screenshots.</li>
+              <li>No centralized tool for staff management or refunds.</li>
             </ul>
           </div>
-        </div>
-      </section>
-      <section className="py-24 bg-teal-700 text-white">
-        <div className="flex flex-col gap-4 text-center">
-          <h1 className="font-semibold text-4xl  my-2 ">Problem Statement</h1>
-          <p className="italic">
-            How might we create a seamless booking experience for customers
-            while reducing the operational burden on staff?
-          </p>
-        </div>
-      </section>
-      <section className="px-32 py-24 text-lg">
-        <div className="px-16 text-4xl text-teal-700 font-semibold my-8 text-center">
-          User Personas
-        </div>
-        <div className="px-16 flex flex-row gap-8">
-          <Card className="flex-1/2">
-            <CardHeader>
-              <Image src={Corporate} alt="" />
-              <CardDescription className="p-4 text-lg">
-                <h1 className="font-bold mb-4">Name: Kim Montegrande, 34</h1>
-                <p className="mb-4">
-                  <strong>Role:</strong> HR Officer at a local agricultural
-                  trading company
-                </p>
-                <strong>Goals:</strong>
-                <ul className="mb-4 italic">
-                  <li className="mb-4">
-                    “I just want to see which dates are open right away so I can
-                    finalize our training schedule.”
-                  </li>
-                  <li className="mb-4">
-                    “Getting a proper invoice instantly would make it easier to
-                    process through our accounting.”
-                  </li>
-                </ul>
-                <strong className="mb-2">Frustrations:</strong>
-                <ul className="italic">
-                  <li className="mb-4">
-                    “Messenger bookings take too long, especially when I’m
-                    coordinating several employees.”
-                  </li>
-                  <li className="mb-4">
-                    “Sometimes replies are delayed, and it holds up the whole
-                    training plan.”
-                  </li>
-                </ul>
+        </section>
 
-                <strong className="mb-2">Needs:</strong>
-                <p className="mb-4">
-                  A professional, self-service booking system with instant
-                  confirmation, date availability, and downloadable receipts.
-                </p>
-              </CardDescription>
-            </CardHeader>
-          </Card>
-          <Card className="flex-1/2">
-            <CardHeader>
-              <Image src={Person} alt="" />
-              <CardDescription className="p-4 text-lg">
-                <h1 className="font-bold mb-4">Name: Miguel Santos, 29</h1>
-                <p className="mb-4">
-                  <strong>Occupation</strong> IT Support Specialist at a local
-                  university
-                </p>
-                <strong>Goals:</strong>
-                <ul className="mb-4 italic">
-                  <li className="mb-4">
-                    “My main priority is to lock in the wedding date without
-                    worrying.”
-                  </li>
-                  <li className="mb-4">
-                    “I’d feel more confident if I received an official receipt
-                    right after paying.”
-                  </li>
-                </ul>
-                <strong className="mb-2">Frustrations:</strong>
-                <ul className="italic">
-                  <li className="mb-4">
-                    “Bank transfer screenshots don’t feel reliable… I keep
-                    wondering if they saw it.”
-                  </li>
-                  <li className="mb-4">
-                    “Not knowing immediately if my date is secured is really
-                    stressful.”
-                  </li>
-                </ul>
-                <strong className="mb-2">Needs:</strong>
-                <p className="mb-4">
-                  A smooth payment process with transparent pricing and
-                  immediate booking confirmation.
-                </p>
-              </CardDescription>
-            </CardHeader>
-          </Card>
-          <Card className="flex-1/2">
-            <CardHeader>
-              <Image src={Team} alt="" />
-              <CardDescription className="p-4 text-lg">
-                <h1 className="font-bold mb-4">Name: James Reyes, 26</h1>
-                <p className="mb-4">
-                  <strong>Occupation</strong> Front desk staff at Cicada Hills
-                  Training Center
-                </p>
-                <strong>Goals:</strong>
-                <ul className="mb-4 italic">
-                  <li className="mb-4">
-                    “I want all bookings in one place instead of digging through
-                    Messenger.”
-                  </li>
-                  <li className="mb-4">
-                    “Refunds should be quick and easy, not a manual
-                    back-and-forth.”
-                  </li>
-                </ul>
-                <strong className="mb-2">Frustrations:</strong>
-                <ul className="italic">
-                  <li className="mb-4">
-                    “I waste so much time scrolling through long chat threads to
-                    double-check details.”
-                  </li>
-                  <li className="mb-4">
-                    “It’s confusing to match payments with screenshots —
-                    mistakes can easily happen.”
-                  </li>
-                </ul>
-                <strong className="mb-2">Needs:</strong>
-                <p className="mb-4">
-                  A clear, centralized dashboard with client details, booking
-                  history, and refund functionality.
-                </p>
-              </CardDescription>
-            </CardHeader>
-          </Card>
-        </div>
-      </section>
-      <section className="px-32 py-24 text-lg">
-        <div className="flex flex-col gap-4 text-end">
-          <span className=" items-center justify-center rounded-full  text-teal-700 text-8xl py-1 ">
-            03{" "}
-          </span>
-          <h1 className="font-semibold text-4xl  my-2 ">
-            Wireframing & Concept Development
-          </h1>
-          <p className="italic">
-            Initial sketches and low-fidelity wireframes explored three primary
-            areas:
+        {/* Problem statement */}
+        <section className="mt-12 py-10 rounded-lg bg-teal-700 text-white text-center">
+          <h3 className="text-2xl sm:text-3xl font-semibold">Problem Statement</h3>
+          <p className="mt-3 italic max-w-3xl mx-auto">
+            How might we create a seamless booking experience for customers while
+            reducing the operational burden on staff?
           </p>
-        </div>
-        <div className="flex flex-row gap-8 my-8">
-          <Card className="flex-1/2"></Card>
-          <Card className="flex-1/2"></Card>
-        </div>
-      </section>
-      <section className="px-32 py-24 text-lg">
-        <div className="flex flex-col gap-4 text-start">
-          <span className=" items-center justify-center rounded-full  text-teal-700 text-8xl py-1 ">
-            04{" "}
-          </span>
-          <h1 className="font-semibold text-4xl  my-2">
-            Prototyping & Iteration
-          </h1>
+        </section>
 
-          <h1 className="font-semibold text-2xl my-2 ">Visual Direction</h1>
-          <p className="font-semibold">Colors:</p>
-          <Card className="flex-1/2"><Image className="h-full w-full object-cover" src={DesignSystem} alt={""}/></Card>
-        </div>
-        <div className="flex flex-row gap-8 my-8">
-          <Card className="flex-1/2"></Card>
-          <Card className="flex-1/2"></Card>
-        </div>
-      </section>
+        {/* Personas */}
+        <section className="mt-12">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl sm:text-3xl font-semibold text-teal-700">
+              User Personas
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Card className="overflow-hidden">
+              <CardHeader>
+                <Image
+                  src={Corporate}
+                  alt="Corporate"
+                  className="w-full h-48 object-cover"
+                />
+                <CardDescription className="p-4 text-sm sm:text-base">
+                  <h4 className="font-bold mb-2">Kim Montegrande, 34</h4>
+                  <p className="mb-2">
+                    <strong>Role:</strong> HR Officer
+                  </p>
+                  <div className="italic text-sm space-y-2">
+                    <p>
+                      “I want to see available dates quickly and get an invoice
+                      for accounting.”
+                    </p>
+                    <p>
+                      Needs: self-service booking, instant confirmation,
+                      downloadable receipts.
+                    </p>
+                  </div>
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="overflow-hidden">
+              <CardHeader>
+                <Image
+                  src={Person}
+                  alt="Person"
+                  className="w-full h-48 object-cover"
+                />
+                <CardDescription className="p-4 text-sm sm:text-base">
+                  <h4 className="font-bold mb-2">Miguel Santos, 29</h4>
+                  <p className="mb-2">
+                    <strong>Occupation:</strong> IT Support
+                  </p>
+                  <div className="italic text-sm space-y-2">
+                    <p>
+                      “I need to lock in the date and get an official receipt
+                      immediately.”
+                    </p>
+                    <p>Needs: smooth payment flow and transparent pricing.</p>
+                  </div>
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="overflow-hidden">
+              <CardHeader>
+                <Image
+                  src={Team}
+                  alt="Team"
+                  className="w-full h-48 object-cover"
+                />
+                <CardDescription className="p-4 text-sm sm:text-base">
+                  <h4 className="font-bold mb-2">James Reyes, 26</h4>
+                  <p className="mb-2">
+                    <strong>Occupation:</strong> Front desk staff
+                  </p>
+                  <div className="italic text-sm space-y-2">
+                    <p>
+                      “I want all bookings in one place instead of searching
+                      Messenger.”
+                    </p>
+                    <p>
+                      Needs: centralized dashboard, booking history, refund
+                      handling.
+                    </p>
+                  </div>
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+        </section>
+
+        {/* Wireframes & Prototyping */}
+        <section className="mt-12 grid grid-cols-1 gap-8">
+          <div className="flex items-center gap-4">
+            <div className="text-teal-700 text-6xl sm:text-7xl font-bold">03</div>
+            <div>
+              <h3 className="text-2xl sm:text-3xl font-semibold text-teal-700">
+                Wireframing & Concept
+              </h3>
+              <p className="mt-2 text-gray-700">
+                Low-fidelity wireframes explored the booking flow and admin tasks.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Card className="h-48" />
+            <Card className="h-48" />
+          </div>
+        </section>
+
+        <section className="mt-12 grid grid-cols-1 gap-8">
+          <div className="flex items-center gap-4">
+            <div className="text-teal-700 text-6xl sm:text-7xl font-bold">04</div>
+            <div>
+              <h3 className="text-2xl sm:text-3xl font-semibold text-teal-700">
+                Prototyping & Visual Direction
+              </h3>
+              <p className="mt-2 text-gray-700">
+                Color system and components used across the site.
+              </p>
+            </div>
+          </div>
+
+          <Card className="overflow-hidden">
+            <Image
+              src={DesignSystem}
+              alt="Design system"
+              className="w-full h-auto object-cover"
+            />
+          </Card>
+        </section>
+      </main>
     </div>
   );
 }
