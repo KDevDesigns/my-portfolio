@@ -83,7 +83,7 @@ export default function CicadaHills () {
           </div>
         </div>
       </section>
-      <section className="py-24 px-32 text-lg">
+      <section className="pb-32 px-32 text-lg">
         <div className="px-16">
           <span className=" items-center justify-center rounded-full  text-teal-700 text-8xl py-1 ">
             02{" "}
@@ -96,8 +96,8 @@ export default function CicadaHills () {
             through interviews and process reviews.
           </p>
         </div>
-        <div className="flex flex-row gap-16 px-16">
-          <div className="flex-1/2 flex-col space-y-2 ">
+        <div className="flex flex-col gap-16 px-16">
+          <div className="flex-col space-y-2 ">
             <h1 className="font-semibold text-lg">User Groups</h1>
             <ul>
               <li className="mb-4">
@@ -110,7 +110,7 @@ export default function CicadaHills () {
               </li>
             </ul>
           </div>
-          <div className="flex-1/2 flex-col space-y-2">
+          <div className="flex-col space-y-2">
             <h1 className="font-semibold text-lg">Key Pain Points</h1>
             <ul>
               <li className="mb-4">Limited online presence beyond Facebook.</li>
