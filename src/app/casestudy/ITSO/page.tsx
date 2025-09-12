@@ -23,7 +23,7 @@ import { Inter } from "next/font/google";
 import { motion } from "framer-motion";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
-export default function () {
+export default function ITSO () {
   return (
     <div className={`min-h-screen ${inter.variable} font-sans`}>
       <div className="min-h-screen w-full flex flex-col gap-10 items-center justify-center px-6 py-16">

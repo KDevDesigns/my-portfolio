@@ -12,7 +12,7 @@ import Profile from "../../../lib/Images/Profile.png";
 import DesignSystem from "../../../lib/Cicada Hills/Design System/DesignSystem.svg";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-export default function () {
+export default function CicadaHills () {
   return (
     <div className={`min-h-screen ${inter.variable} font-sans py-16`}>
       <section className="min-h-screen w-full flex-col gap-12 items-center justify-center my-20 px-32">
