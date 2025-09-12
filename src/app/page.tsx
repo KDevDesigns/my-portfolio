@@ -1,23 +1,10 @@
 "use client";
 
 import { Inter } from "next/font/google";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { AspectRatio } from "@radix-ui/react-aspect-ratio";
-import {
-  AlertDialog,
-  AlertDialogTrigger,
-  AlertDialogContent,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogFooter,
-  AlertDialogCancel,
-} from "@/components/ui/alert-dialog";
-import Image from "next/image";
 import CicadaHills from "@/lib/Cicada Hills/CoverCicadaHills.svg";
 import ITSO from "@/lib/ITSO/CoverITSO.svg";
 import CancerLine from "@/lib/CancerLine Companion/CoverCancerLine.svg";
-import { Lock } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
 import ProjectCard from "@/components/custom ui/ProjectCard";

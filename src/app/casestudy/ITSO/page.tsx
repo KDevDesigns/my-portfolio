@@ -5,8 +5,7 @@ import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import {
-  ArrowUpRight,
-  CirclePlay,
+
   ClockArrowDown,
   GalleryVerticalEnd,
   ListChecks,
@@ -15,15 +14,9 @@ import {
   SearchX,
 } from "lucide-react";
 
-import STEP1 from "../../../lib/Screenshots/ITSO/BasicInfo1.svg";
-import STEP2 from "../../../lib/Screenshots/ITSO/InventorDetails2.svg";
-import STEP3 from "../../../lib/Screenshots/ITSO/UploadDocuments3.svg";
-import STEP4 from "../../../lib/Screenshots/ITSO/Review&Submit4.svg";
-import TRACKDASH from "../../../lib/Screenshots/ITSO/TrackApplicationDash.svg";
-import TRACKDETAIL from "../../../lib/Screenshots/ITSO/TrackApplicationDetails.svg";
-import PATENTSEARCH from "../../../lib/Screenshots/ITSO/PatentSearch.svg";
+
 import IA from "../../../lib/Screenshots/ITSO/Information Architecture.svg";
-import Wireframe from "../../../lib/Screenshots/ITSO/Wireframes.png";
+
 import { Card } from "@/components/ui/card";
 import CaseStudyNavigation from "@/components/CaseStudyNavigation";
 import { Inter } from "next/font/google";
