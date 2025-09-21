@@ -1,21 +1,17 @@
 "user-client";
-import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import React from "react";
 import Main from "@/lib/Cicada Hills/Main/MainCicadaHills.svg";
-import { Card, CardContent } from "@/components/ui/card";
-import Wireframes from "@/lib/Cicada Hills/Wireframes/Wireframes.svg";
 import ImagePlaceholder from "@/lib/Universal Assets/ImagePlaceholder.svg";
 import { Separator } from "@radix-ui/react-separator";
+import Wireframes from "@/lib/Cicada Hills/Wireframes/Wireframes.svg"
+import PrototypeStep1 from "@/lib/Cicada Hills/Wireframes/PrototypeStep1.svg"
+import PrototypeStep2 from "@/lib/Cicada Hills/Wireframes/PrototypeStep2.svg"
+import PrototypeStep3 from "@/lib/Cicada Hills/Wireframes/PrototypeStep3.svg"
+import PrototypeStep4 from "@/lib/Cicada Hills/Wireframes/PrototypeStep4.svg"
+import PrototypeStep5 from "@/lib/Cicada Hills/Wireframes/PrototypeStep5.svg"
 import { Inter } from "next/font/google";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { ChevronLeft } from "lucide-react";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -143,12 +139,6 @@ export default function CicadaHills({}) {
         </div>
 
         <div className="p-16 lg:px-32">
-          <h1 className="text-3xl font-medium text-teal-700">
-            User journey map
-          </h1>
-          <div className="py-16">
-            <Image src={ImagePlaceholder} alt={""} />
-          </div>
           <h1 className="text-3xl font-medium text-teal-700 text-center my-4">
             From User Flow to UI
           </h1>
@@ -159,21 +149,15 @@ export default function CicadaHills({}) {
             friction, and aligned with client feedback from reviews.
           </p>
           <div className="py-16">
+            <p className="py-8">User Flow</p>
+            <Image src={ImagePlaceholder} alt={""} />
             <p className="py-8">
               Wireframes initially tested a four-step process:
             </p>
-            <Image src={ImagePlaceholder} alt={""} />
+            <Image src={Wireframes} alt={""} />
           </div>
 
-          <h1 className="text-3xl font-medium text-teal-700">Wireframes</h1>
-          <p>
-            sketches explored ways to make the calendar central to the booking
-            flow.
-          </p>
-          <div className="py-16 flex flex-col lg:flex-row gap-8">
-            <Image src={ImagePlaceholder} alt={""} />
-            <Image src={ImagePlaceholder} alt={""} />
-          </div>
+          
           <p className="text-center p-2 lg:p-32 md:p-16 sm:p-16 ">
             Across three wireframe iterations, the design was refined to create
             a smoother booking flow that clearly showcased Cicada Hills’
@@ -193,29 +177,25 @@ export default function CicadaHills({}) {
             Integrated feedback from peers who emphasized making the Check
             Availability button always visible.
           </p>
-          <div className="py-16 flex flex-col lg:flex-row gap-8">
-            <Image src={ImagePlaceholder} alt={""} />
-            <Image src={ImagePlaceholder} alt={""} />
-            {/* <Carousel className="w-full max-w-xs">
-              <CarouselContent>
-                {Array.from({ length: 5 }).map((_, index) => (
-                  <CarouselItem key={index}>
-                    <div className="p-1">
-                      <Card>
-                        <CardContent className="flex aspect-square items-center justify-center p-6">
-                          <span className="text-4xl font-semibold">
-                            {index + 1}
-                          </span>
-                        </CardContent>
-                      </Card>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel> */}
+          <div className="py-12 flex flex-col gap-8 md:flex-row md:justify-center md:items-center">
+            <div className="w-full md:w-1/2">
+            <Image src={PrototypeStep1} alt={""} className="max-w-full h-auto" />
+            </div>
+            <div className="w-full md:w-1/2">
+            <Image src={PrototypeStep2} alt={""} className="max-w-full h-auto" />
+            </div>
           </div>
+          <div className="flex flex-col gap-8 md:flex-row md:justify-center md:items-center">
+            <div className="w-full md:w-1/2">
+            <Image src={PrototypeStep3} alt={""} className="max-w-full h-auto" />
+            </div>
+            <div className="w-full md:w-1/2">
+            <Image src={PrototypeStep4} alt={""} className="max-w-full h-auto" />
+            </div>
+          </div>
+          <div className="flex flex-col justify-center items-center py-16"><div className="w-full md:w-1/2">
+            <Image src={PrototypeStep5} alt={""} className="max-w-full h-auto" />
+            </div></div>
           <Separator className="my-6 border-1" />
         </div>
       </section>
