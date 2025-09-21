@@ -1,4 +1,4 @@
-"user-client";
+"use client";
 import Image from "next/image";
 import React from "react";
 import Main from "@/lib/Cicada Hills/Main/MainCicadaHills.svg";
@@ -12,153 +12,223 @@ import PrototypeStep4 from "@/lib/Cicada Hills/Wireframes/PrototypeStep4.svg"
 import PrototypeStep5 from "@/lib/Cicada Hills/Wireframes/PrototypeStep5.svg"
 import { Inter } from "next/font/google";
 
+// Import Framer Motion
+import { motion } from "framer-motion";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function CicadaHills({}) {
+  // Define animation variants for different elements
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3, // Animate children with a delay
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    show: { opacity: 1, scale: 1, transition: { duration: 0.8 } },
+  };
+
   return (
     <main className={inter.className}>
       <section className="lg:mx-32 md:mx-24 sm:mx-16 mx-auto overflow-hidden">
-        <div className="py-32 p-16">
-          <h1 className="text-4xl lg:text-6xl my-4 font-semibold text-center text-teal-700">
-            <span className="text-black font-bold">Case Study:</span> From
-            Messenger Chaos to Seamless Booking at Cicada Hills
-          </h1>
-          <p className="text-center lg:text-2xl md:text-xl text-xl">
+        {/* Hero Section */}
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="py-32 p-16"
+        >
+          <motion.h1 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-4xl lg:text-6xl my-4 font-semibold text-center text-teal-700"
+          >
+            <span className="text-black font-bold">Case Study:</span> From Messenger Chaos to Seamless Booking at Cicada Hills
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="text-center lg:text-2xl md:text-xl text-xl"
+          >
             From Messenger Chaos to Seamless Booking at Cicada Hills
-          </p>
-        </div>
-        <div className="py-0 lg:py-32">
-          <Image className="mx-auto h-auto" src={Main} alt={""} />
-        </div>
-        <div className="flex flex-col lg:flex-row p-16 lg:px-32 gap-12">
-          <div className="flex-1/2">
+          </motion.p>
+        </motion.div>
+
+        {/* Main Image */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.5 }}
+          className="py-0 lg:py-32"
+        >
+          <Image className="mx-auto h-auto" src={Main} alt={"Main image showing the Cicada Hills website on a device"} />
+        </motion.div>
+        
+        {/* Challenge and Spark Sections */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="flex flex-col lg:flex-row p-16 lg:px-32 gap-12"
+        >
+          <motion.div variants={itemVariants} className="flex-1/2">
             <h1 className="text-3xl text-teal-700 font-medium py-2">
               The Challenge
             </h1>
             <p className="text-justify my-4">
-              Couples dreaming of weddings, companies planning retreats, and
-              families celebrating milestones all loved the serene beauty of
-              Cicada Hills in Davao City. But booking the venue? That was a
-              different story. Everything ran through Facebook Messenger and
-              phone calls. One missed notification could mean a lost client.
-              Guests often messaged three times just to confirm one date.
-              Information was scattered, double-bookings were a constant risk,
-              and the owner spent more time juggling chats than running her
-              venue.
+              Couples dreaming of weddings, companies planning retreats, and families celebrating milestones all loved the serene beauty of Cicada Hills in Davao City. But booking the venue? That was a different story. Everything ran through Facebook Messenger and phone calls. One missed notification could mean a lost client. Guests often messaged three times just to confirm one date. Information was scattered, double-bookings were a constant risk, and the owner spent more time juggling chats than running her venue.
             </p>
-          </div>
-          <div className="flex-1/2">
+          </motion.div>
+          <motion.div variants={itemVariants} className="flex-1/2">
             <h1 className="text-3xl text-teal-700 font-medium py-2">
               The Spark
             </h1>
             <p className="text-justify my-4">
-              The owner asked for a professional website. My challenge: design
-              an experience so simple that even the least tech-savvy guest could
-              book with confidence. The solution? A stepper booking system—a
-              guided, step-by-step flow that removes friction and builds trust
-              at every click.
+              The owner asked for a professional website. My challenge: design an experience so simple that even the least tech-savvy guest could book with confidence. The solution? A stepper booking system—a guided, step-by-step flow that removes friction and builds trust at every click.
             </p>
-          </div>
-        </div>
-        <div className="flex flex-col gap-16 lg:flex-row md:flex-row mx-auto py-8 px-16">
-          <div className="text-center grow">
+          </motion.div>
+        </motion.div>
+
+        {/* Stats Section */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="flex flex-col gap-16 lg:flex-row md:flex-row mx-auto py-8 px-16"
+        >
+          <motion.div variants={itemVariants} className="text-center grow">
             <h1 className="text-xl lg:text-2xl font-medium">Timeframe</h1>
             <p className="text-lg">6 weeks</p>
-          </div>
-          <div className="text-center grow">
+          </motion.div>
+          <motion.div variants={itemVariants} className="text-center grow">
             <h1 className="text-xl lg:text-2xl font-medium">My Role</h1>
             <p className="text-lg">UI/UX Designer</p>
-          </div>
-          <div className="text-center grow">
+          </motion.div>
+          <motion.div variants={itemVariants} className="text-center grow">
             <h1 className="text-xl lg:text-2xl font-medium">Tools</h1>
             <p className="text-lg">Figma</p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
+        
+        {/* Pain Points Section */}
         <div className="p-16 lg:px-32">
           <Separator className="my-6 border-1" />
-          <h1 className="text-3xl font-medium my-16 text-center bg-teal-700 text-white p-16">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            className="text-3xl font-medium my-16 text-center bg-teal-700 text-white p-16"
+          >
             The Design Journey
-          </h1>
-          <h1 className="text-3xl font-medium my-4 text-teal-700">
-            Understanding the Users
-          </h1>
-          <p className="text-justify">
-            My research drew from two sources: direct interviews with the owner
-            and one staff member, and collected client feedback from reviews and
-            comments about their booking experiences. While I first assumed cost
-            would be the primary concern, the findings revealed something
-            different: convenience and trust dominated customer priorities.
-            Clients were willing to pay for a premium venue—they simply wanted
-            assurance that their reservations were secure and the process
-            transparent. The manual approach left them uncertain, anxious, and
-            often frustrated.
-          </p>
-          <h1 className="text-center my-6 text-2xl font-medium py-16">
-            Pain Points
-          </h1>
-          <div className="flex flex-col lg:flex-row gap-12 ">
-            <div className="flex flex-col justify-center">
+          </motion.h1>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="flex flex-col lg:flex-row gap-12"
+          >
+            <motion.div variants={itemVariants} className="flex flex-col justify-center">
               <h1 className="text-center text-lg font-semibold text-teal-700">
                 Unclear availability
               </h1>
               <p className="text-center">
                 Users couldn’t tell if dates were actually free.
               </p>
-            </div>
-            <div className="flex flex-col justify-center">
+            </motion.div>
+            <motion.div variants={itemVariants} className="flex flex-col justify-center">
               <h1 className="text-center text-lg font-semibold text-teal-700">
                 Slow confirmations
               </h1>
               <p className="text-center">
                 Waiting hours—or days—for replies felt endless.
               </p>
-            </div>
-            <div className="flex flex-col justify-center">
+            </motion.div>
+            <motion.div variants={itemVariants} className="flex flex-col justify-center">
               <h1 className="text-center text-lg font-semibold text-teal-700">
                 Confusing process
               </h1>
-              <p className="text-center ">Each inquiry started from scratch.</p>
-            </div>
-            <div className="flex flex-col justify-center">
+              <p className="text-center">Each inquiry started from scratch.</p>
+            </motion.div>
+            <motion.div variants={itemVariants} className="flex flex-col justify-center">
               <h1 className="text-center text-lg font-semibold text-teal-700">
                 Lack of trust
               </h1>
-              <p className="text-center ">
+              <p className="text-center">
                 Without proof of booking, users doubted they were secure.
               </p>
-            </div>
-          </div>
-          <div>
-            <h1 className="text-3xl font-medium py-16 text-teal-700">
-              Personas
-            </h1>
-            <Image src={ImagePlaceholder} alt={""} />
-          </div>
-          <Separator className="my-1 border-1" />
+            </motion.div>
+          </motion.div>
         </div>
 
+        {/* Wireframes Section */}
         <div className="p-16 lg:px-32">
-          <h1 className="text-3xl font-medium text-teal-700 text-center my-4">
+          <Separator className="my-1 border-1" />
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            className="text-3xl font-medium text-teal-700 text-center my-4"
+          >
             From User Flow to UI
-          </h1>
-          <p className="text-center px-2 lg:px-32 md:px-16 sm:px-16">
-            The design process began with user flows, mapping the entire booking
-            journey. Three iterations were created and refined based on comments
-            from the owner and staff. Each cycle improved clarity, reduced
-            friction, and aligned with client feedback from reviews.
-          </p>
+          </motion.h1>
           <div className="py-16">
-            <p className="py-8">User Flow</p>
-            <Image src={ImagePlaceholder} alt={""} />
-            <p className="py-8">
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="py-8"
+            >
+              User Flow
+            </motion.p>
+            <motion.div
+              variants={imageVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+            >
+              <Image src={ImagePlaceholder} alt={"User flow diagram"} />
+            </motion.div>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="py-8"
+            >
               Wireframes initially tested a four-step process:
-            </p>
-            <Image src={Wireframes} alt={""} />
+            </motion.p>
+            <motion.div
+              variants={imageVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+            >
+              <Image src={Wireframes} alt={"Wireframes showing a four-step booking process"} />
+            </motion.div>
           </div>
-
           
-          <p className="text-center p-2 lg:p-32 md:p-16 sm:p-16 ">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            className="text-center p-2 lg:p-32 md:p-16 sm:p-16"
+          >
             Across three wireframe iterations, the design was refined to create
             a smoother booking flow that clearly showcased Cicada Hills’
             services and packages. The focus was on eliminating uncertainty and
@@ -168,34 +238,69 @@ export default function CicadaHills({}) {
             and enhanced user confidence. These refinements also laid the
             groundwork for a straightforward MVP showcase of the admin
             dashboard.
-          </p>
+          </motion.p>
+
           <Separator className="my-6 border-1" />
-          <h1 className="text-3xl font-medium text-teal-700">
+          
+          {/* Hi-Fi Wireframes Section */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            className="text-3xl font-medium text-teal-700"
+          >
             Hi-Fi Wireframes
-          </h1>
-          <p>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
             Integrated feedback from peers who emphasized making the Check
             Availability button always visible.
-          </p>
-          <div className="py-12 flex flex-col gap-8 md:flex-row md:justify-center md:items-center">
-            <div className="w-full md:w-1/2">
-            <Image src={PrototypeStep1} alt={""} className="max-w-full h-auto" />
-            </div>
-            <div className="w-full md:w-1/2">
-            <Image src={PrototypeStep2} alt={""} className="max-w-full h-auto" />
-            </div>
-          </div>
-          <div className="flex flex-col gap-8 md:flex-row md:justify-center md:items-center">
-            <div className="w-full md:w-1/2">
-            <Image src={PrototypeStep3} alt={""} className="max-w-full h-auto" />
-            </div>
-            <div className="w-full md:w-1/2">
-            <Image src={PrototypeStep4} alt={""} className="max-w-full h-auto" />
-            </div>
-          </div>
-          <div className="flex flex-col justify-center items-center py-16"><div className="w-full md:w-1/2">
-            <Image src={PrototypeStep5} alt={""} className="max-w-full h-auto" />
-            </div></div>
+          </motion.p>
+          
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.5 }}
+            className="py-12 flex flex-col gap-8 md:flex-row md:justify-center md:items-center"
+          >
+            <motion.div variants={imageVariants} className="w-full md:w-1/2">
+              <Image src={PrototypeStep1} alt={"Prototype wireframe step 1"} className="max-w-full h-auto" />
+            </motion.div>
+            <motion.div variants={imageVariants} className="w-full md:w-1/2">
+              <Image src={PrototypeStep2} alt={"Prototype wireframe step 2"} className="max-w-full h-auto" />
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.5 }}
+            className="flex flex-col gap-8 md:flex-row md:justify-center md:items-center"
+          >
+            <motion.div variants={imageVariants} className="w-full md:w-1/2">
+              <Image src={PrototypeStep3} alt={"Prototype wireframe step 3"} className="max-w-full h-auto" />
+            </motion.div>
+            <motion.div variants={imageVariants} className="w-full md:w-1/2">
+              <Image src={PrototypeStep4} alt={"Prototype wireframe step 4"} className="max-w-full h-auto" />
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.5 }}
+            className="flex flex-col justify-center items-center py-16"
+          >
+            <motion.div variants={imageVariants} className="w-full md:w-1/2">
+              <Image src={PrototypeStep5} alt={"Prototype wireframe step 5"} className="max-w-full h-auto" />
+            </motion.div>
+          </motion.div>
           <Separator className="my-6 border-1" />
         </div>
       </section>
