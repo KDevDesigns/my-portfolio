@@ -13,27 +13,63 @@ import ProjectCard from "@/components/custom ui/ProjectCard";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export default function HomePage() {
+  // Define animation variants for a staggered effect
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // Stagger delay for children elements
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <div
       className={`min-h-screen flex flex-col px-10 sm:px-20 md:px-24 lg:px-28 py-8 gap-16 ${inter.variable} font-sans `}
     >
-      {/* Hero Section */}
+      {/* Hero Section with Animations */}
       <section className="flex flex-col lg:flex-row justify-between items-start gap-12 mt-16 lg:mt-32 mb-16 lg:mb-32">
-        <div className="flex-1">
-          <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight text-balance">
+        <motion.div 
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex-1"
+        >
+          <motion.h1 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight text-balance"
+          >
             Hi! I’m Kevin, a <br />
             <span className="text-[#7A382B]">UI/UX Designer</span>
-          </h1>
-          <p className="mt-4 text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl tracking-wide leading-relaxed">
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="mt-4 text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl tracking-wide leading-relaxed"
+          >
             Design is not decoration—it’s acceleration. I build systems that
             move users from question to solution.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
       </section>
 
-      {/* My Works Section */}
+      {/* My Works Section with Animations */}
       <section id="work" className="mt-16 lg:mt-32">
-        <div className="mb-12 space-y-2">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          className="mb-12 space-y-2"
+        >
           <h2 className="text-3xl sm:text-4xl font-bold">
             My <span className="text-[#7A382B]">Works</span>
           </h2>
@@ -41,50 +77,63 @@ export default function HomePage() {
             See how I turn complexity into clarity. Browse case studies. <br />
             Explore web, mobile, and brand work.
           </p>
-        </div>
+        </motion.div>
 
         <Tabs defaultValue="case-studies" className="w-full">
-          <TabsList className="flex flex-wrap gap-2">
-            <TabsTrigger value="case-studies">Case Studies</TabsTrigger>
-            <TabsTrigger value="web-mobile">Web & Mobile</TabsTrigger>
-            <TabsTrigger value="branding">Branding</TabsTrigger>
-            <TabsTrigger value="playground">Playground</TabsTrigger>
-          </TabsList>
+          {/* Use motion.div for the TabsList */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+          >
+            <TabsList className="flex flex-wrap gap-2">
+              <TabsTrigger value="case-studies">Case Studies</TabsTrigger>
+              <TabsTrigger value="web-mobile">Web & Mobile</TabsTrigger>
+              <TabsTrigger value="branding">Branding</TabsTrigger>
+              <TabsTrigger value="playground">Playground</TabsTrigger>
+            </TabsList>
+          </motion.div>
 
           {/* Case Studies */}
           <TabsContent value="case-studies" className="mt-12">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
+              variants={containerVariants}
+              initial="hidden"
+              animate="show" // Use `animate` for a smooth transition on tab change
               className="grid grid-cols-1 md:grid-cols-2 gap-12"
             >
-              <ProjectCard
-                title="Cicada Hills"
-                desc="Modular mental health interface reducing overwhelm and boosting engagement through guided flows."
-                image={CicadaHills}
-                link="/casestudy/CicadaHills"
-              />
-
-              <ProjectCard
-                title="CancerLine Companion"
-                desc="CancerLine Companion helps cancer patients navigate treatment with confidence using guided flows and accessible design."
-                image={CancerLine}
-                locked
-              />
-
-              <ProjectCard
-                title="ITSO"
-                desc="A beachhouse brand website designed to attract more direct bookings through a clean UI and custom form."
-                image={ITSO}
-                link="/casestudy/ITSO"
-              />
-               <ProjectCard
-                title="ITSO"
-                desc="A beachhouse brand website designed to attract more direct bookings through a clean UI and custom form."
-                image={ITSO}
-                link="#"
-              />
+              <motion.div variants={itemVariants}>
+                <ProjectCard
+                  title="Cicada Hills"
+                  desc="Modular mental health interface reducing overwhelm and boosting engagement through guided flows."
+                  image={CicadaHills}
+                  link="/casestudy/CicadaHills"
+                />
+              </motion.div>
+              <motion.div variants={itemVariants}>
+                <ProjectCard
+                  title="CancerLine Companion"
+                  desc="CancerLine Companion helps cancer patients navigate treatment with confidence using guided flows and accessible design."
+                  image={CancerLine}
+                  locked
+                />
+              </motion.div>
+              <motion.div variants={itemVariants}>
+                <ProjectCard
+                  title="ITSO"
+                  desc="A beachhouse brand website designed to attract more direct bookings through a clean UI and custom form."
+                  image={ITSO}
+                  link="/casestudy/ITSO"
+                />
+              </motion.div>
+              <motion.div variants={itemVariants}>
+                <ProjectCard
+                  title="ITSO"
+                  desc="A beachhouse brand website designed to attract more direct bookings through a clean UI and custom form."
+                  image={ITSO}
+                  link="#"
+                />
+              </motion.div>
             </motion.div>
           </TabsContent>
 
