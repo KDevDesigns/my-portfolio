@@ -10,7 +10,7 @@ import PrototypeStep2 from "@/lib/Cicada Hills/Wireframes/PrototypeStep2.svg";
 import PrototypeStep3 from "@/lib/Cicada Hills/Wireframes/PrototypeStep3.svg";
 import PrototypeStep4 from "@/lib/Cicada Hills/Wireframes/PrototypeStep4.svg";
 import PrototypeStep5 from "@/lib/Cicada Hills/Wireframes/PrototypeStep5.svg";
-import NewUserflow from "@/lib/Cicada Hills/Research/NewUserflow.svg"
+import NewUserflow from "@/lib/Cicada Hills/Research/NewUserflow.svg";
 import OldUserflow from "@/lib/Cicada Hills/Research/Userflow.svg";
 import { Inter } from "next/font/google";
 
@@ -21,15 +21,12 @@ import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function CicadaHills({}) {
-  // Define animation variants for different elements
+export default function CicadaHills() {
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.3, // Animate children with a delay
-      },
+      transition: { staggerChildren: 0.3 },
     },
   };
 
@@ -68,27 +65,7 @@ export default function CicadaHills({}) {
             Reimagining Cicada Hills&apos; Digital Experience
           </motion.h1>
         </motion.div>
-        {/* Stats Section */}
-        {/* <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="flex flex-col gap-16 lg:flex-row md:flex-row mx-auto px-16 py-12"
-        >
-          <motion.div variants={itemVariants} className="text-center grow">
-            <h1 className="text-xl lg:text-2xl font-medium">Timeframe</h1>
-            <p className="text-lg">6 weeks</p>
-          </motion.div>
-          <motion.div variants={itemVariants} className="text-center grow">
-            <h1 className="text-xl lg:text-2xl font-medium">My Role</h1>
-            <p className="text-lg">UI/UX Designer</p>
-          </motion.div>
-          <motion.div variants={itemVariants} className="text-center grow">
-            <h1 className="text-xl lg:text-2xl font-medium">Tools</h1>
-            <p className="text-lg">Figma</p>
-          </motion.div>
-        </motion.div> */}
+
         {/* Main Image */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -98,9 +75,11 @@ export default function CicadaHills({}) {
           className="py-0 lg:py-32"
         >
           <Image
-            className="mx-auto h-auto"
             src={Main}
-            alt={"Main image showing the Cicada Hills website on a device"}
+            alt="Main image showing the Cicada Hills website on a device"
+            width={1200}
+            height={800}
+            className="mx-auto h-auto"
           />
         </motion.div>
 
@@ -112,51 +91,38 @@ export default function CicadaHills({}) {
           viewport={{ once: true }}
           className="flex flex-col lg:flex-row p-16 lg:px-32 gap-12"
         >
-          <motion.div variants={itemVariants} className="flex-1/2">
+          <motion.div variants={itemVariants} className="basis-1/2">
             <h1 className="text-3xl text-teal-700 font-medium ">
               Project Overview
             </h1>
             <p className="italic text-sm">Setting the stage for change</p>
             <p className="text-justify my-4">
               Cicada Hills, a stunning nature-inspired events venue in Davao
-              City, had cultivated a strong following on social media,
-              showcasing its beautiful scenery and premium offerings. However,
-              this popular online presence masked a significant operational
-              weakness: the business relied entirely on a manual, high-friction
-              booking process through Facebook Messenger, which created
-              operational bottlenecks and a frustrating experience for a growing
-              customer base.
-            </p>
-            <p className="text-justify my-4">
-              The co-owner approached me with a clear challenge: to lead a
-              complete digital transformation that would elevate their brand
-              beyond social media. The project involved designing a seamless
-              online booking system, creating a professional website to capture
-              organic search traffic, and executing a full brand identity
-              refresh to build credibility and trust.
+              City, had cultivated a strong following on social media...
             </p>
           </motion.div>
-          <motion.div variants={itemVariants} className="flex-1/2">
+
+          <motion.div variants={itemVariants} className="basis-1/2">
             <h1 className="text-3xl text-teal-700 font-medium ">
               The Challenge
             </h1>
             <p className="italic text-sm">The Manual Process Dilemma</p>
             <p className="text-justify my-4">
-              During my initial interview with the co-owner, she detailed a
-              workflow that was both time-consuming and out of sync with the
-              venue's premium image. The core problem was a disconnect between
-              the high-quality experience offered on-site and the clunky,
-              inefficient process customers faced online.
+              During my initial interview with the co-owner...
             </p>
-            <ul className="list-disc flex flex-col  list-inside gap-2 my-4">
+            <p className="font-semibold my-2">
               The co-owner’s goals were clear:
+            </p>
+            <ul className="list-disc list-inside gap-2 my-4">
               <li>Expand visibility beyond Facebook.</li>
               <li>Build a credible, professional online presence.</li>
               <li>Automate operations to save time and reduce errors.</li>
             </ul>
           </motion.div>
         </motion.div>
-        <Separator className="my-1 border-1 w-6xl mx-auto" />
+
+        {/* Separator fix */}
+        <Separator className="my-1 w-full max-w-6xl mx-auto border" />
         <div className="p-16 lg:px-32">
           {/* */}
           <motion.div
@@ -260,20 +226,6 @@ export default function CicadaHills({}) {
               </p>
             </motion.div>
           </motion.div>
-          {/* <motion.div
-            variants={textVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.5 }}
-          >
-            <h1 className="text-3xl text-teal-700 font-medium text-center">
-              Personas
-            </h1>
-            <motion.div className="py-12 flex flex-col gap-8 md:justify-center md:items-center">
-              <Image className="w-full md:w-1/1" src={Hannah} alt={""}></Image>
-              <Image className="w-full md:w-1/1" src={Hannah} alt={""}></Image>
-            </motion.div>
-          </motion.div> */}
         </div>
         <Separator className="my-1 border-1 w-6xl mx-auto" />
         {/* Wireframes Section */}
