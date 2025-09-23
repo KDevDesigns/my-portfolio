@@ -65,7 +65,7 @@ export default function CicadaHills({}) {
             className="text-4xl lg:text-6xl my-4 font-semibold text-center text-teal-700"
           >
             <span className="text-black font-bold">Case Study:</span>{" "}
-            Reimagining Cicada Hills' Digital Experience
+            Reimagining Cicada Hills&apos; Digital Experience
           </motion.h1>
         </motion.div>
         {/* Stats Section */}
@@ -563,7 +563,7 @@ export default function CicadaHills({}) {
             viewport={{ once: true, amount: 0.5 }}
             className="text-3xl font-medium text-teal-700"
           >
-            What’s Next
+            What&apos;s Next
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
