@@ -244,7 +244,7 @@ export default function CicadaHills() {
             viewport={{ once: true, amount: 0.5 }}
             className="text-center italic"
           >
-            Here's how the booking system took shape.
+            Here&aopos;s how the booking system took shape.
           </motion.p>
           <div className="py-4">
             <motion.div
