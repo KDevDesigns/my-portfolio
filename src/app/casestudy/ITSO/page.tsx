@@ -7,6 +7,7 @@ import { Separator } from "@radix-ui/react-separator";
 // Images
 import MainImage from "@/lib/ITSO/CoverPhotoITSO.svg";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 // Text
 const inter = Inter({ subsets: ["latin"] });
@@ -14,13 +15,13 @@ export default function ITSO() {
   return (
     <div className={inter.className}>
       <header className="px-16 py-8 ">
-        <a
+        <Link
           href="/"
           className="flex justify-start gap-2 font-medium items-start"
         >
           <MoveLeft />
           Back
-        </a>
+        </Link>
       </header>
       <main className="">
         <section className="flex flex-col px-16 py-16 md:p-20">

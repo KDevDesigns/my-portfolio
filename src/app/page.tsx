@@ -3,7 +3,7 @@
 import { Inter } from "next/font/google";
 import { Card } from "@/components/ui/card";
 import CicadaHills from "@/lib/Cicada Hills/CoverCicadaHills.svg";
-import ITSO from "@/lib/ITSO/CoverITSO.svg";
+import MindSpace from "@/lib/Mindspace/MindspaceCover.svg";
 import CancerLine from "@/lib/CancerLine Companion/CoverCancerLine.svg";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
@@ -116,6 +116,14 @@ export default function HomePage() {
                   desc="CancerLine Companion helps cancer patients navigate treatment with confidence using guided flows and accessible design."
                   image={CancerLine}
                   locked
+                />
+              </motion.div>
+              <motion.div variants={itemVariants}>
+                <ProjectCard
+                  title="Mindspace"
+                  desc="Modular mental health interface reducing overwhelm and boosting engagement through guided flows."
+                  image={MindSpace}
+                  link="/casestudy/Mindspace"
                 />
               </motion.div>
               

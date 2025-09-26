@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import CoverImg from "@/lib/Mindspace/MindspaceCover.svg";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -14,13 +15,13 @@ export default function MindSpace() {
         className="flex items-center justify-start
                         py-4 md:py-4 px-4 md:px-8 lg:px-12 mx-8 lg:mx-28"
       >
-        <a
+        <Link
           href="/"
           className="font-medium text-blue-700 flex justify-center items-center gap-2 text-xs md:text-sm lg:text-lg"
         >
           <MoveLeft />
           Home
-        </a>
+        </Link>
       </header>
       <main className="">
         <section className="flex flex-col">

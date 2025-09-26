@@ -27,6 +27,7 @@ import {
 } from "lucide-react";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -59,9 +60,9 @@ export default function CicadaHills() {
       <section className="lg:mx-32 md:mx-24 sm:mx-16 mx-auto overflow-hidden">
         {/*Home Nav*/}
         <motion.div className="flex p-16 lg:px-16 gap-12">
-          <a href="/" className="flex justify-center gap-4 font-medium place-content-center">
+          <Link href="/" className="flex justify-center gap-4 font-medium place-content-center">
             <MoveLeft />Back
-          </a>
+          </Link>
         </motion.div>
         {/* Hero Section */}
         <motion.div
