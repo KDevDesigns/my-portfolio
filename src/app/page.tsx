@@ -118,39 +118,41 @@ export default function HomePage() {
                   locked
                 />
               </motion.div>
-              <motion.div variants={itemVariants}>
-                <ProjectCard
-                  title="ITSO"
-                  desc="A beachhouse brand website designed to attract more direct bookings through a clean UI and custom form."
-                  image={ITSO}
-                  link="/casestudy/ITSO"
-                />
-              </motion.div>
-              <motion.div variants={itemVariants}>
-                <ProjectCard
-                  title="ITSO"
-                  desc="A beachhouse brand website designed to attract more direct bookings through a clean UI and custom form."
-                  image={ITSO}
-                  link="#"
-                />
-              </motion.div>
+              
+              
             </motion.div>
+            
           </TabsContent>
 
           {/* Web & Mobile */}
           <TabsContent value="web-mobile" className="mt-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
+            
+             <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              animate="show" // Use `animate` for a smooth transition on tab change
               className="grid grid-cols-1 md:grid-cols-2 gap-12"
             >
-              <Card className="p-6 flex items-center justify-center">
-                <p className="text-gray-400">
-                  More mobile/web concepts coming soon…
-                </p>
-              </Card>
+              <motion.div variants={itemVariants}>
+                <ProjectCard
+                  title="Cicada Hills"
+                  desc="Modular mental health interface reducing overwhelm and boosting engagement through guided flows."
+                  image={CicadaHills}
+                  link=""
+                />
+              </motion.div>
+              <motion.div variants={itemVariants}>
+                <ProjectCard
+                  title="Cicada Hills"
+                  desc="Modular mental health interface reducing overwhelm and boosting engagement through guided flows."
+                  image={CicadaHills}
+                  link=""
+                />
+              </motion.div>
+              
+              
             </motion.div>
+            
           </TabsContent>
 
           {/* Branding */}
