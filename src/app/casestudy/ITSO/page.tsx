@@ -3,7 +3,7 @@ import { MoveLeft } from "lucide-react";
 import React from "react";
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import { Separator } from "@radix-ui/react-separator";
+
 // Images
 import MainImage from "@/lib/ITSO/CoverPhotoITSO.svg";
 import { Button } from "@/components/ui/button";

@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import CoverImg from "@/lib/Mindspace/MindspaceCover.svg";
-import Link from "next/link";
+import Link from "next/link"; // Link is correctly imported and used
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -13,10 +13,10 @@ export default function MindSpace() {
     <div className={inter.className}>
       <header
         className="flex items-center justify-start
-                        py-4 md:py-4 px-4 md:px-8 lg:px-12 mx-8 lg:mx-28"
+                        py-4 md:py-4 px-4 md:px-8 lg:px-12 mx-8 lg:mx-28"
       >
         <Link
-          href="/"
+          href="/" // Using <Link /> for internal navigation to avoid the previous error
           className="font-medium text-blue-700 flex justify-center items-center gap-2 text-xs md:text-sm lg:text-lg"
         >
           <MoveLeft />
@@ -34,7 +34,7 @@ export default function MindSpace() {
 
             <div
               className="absolute left-0 bottom-0 flex flex-col gap-2 md:gap-4 items-start 
-                        p-4 md:p-8 lg:p-12 mx-8 lg:mx-28 "
+                        p-4 md:p-8 lg:p-12 mx-8 lg:mx-28 "
             >
               <Badge className="text-xs md:text-sm lg:text-lg p-1 md:p-2 text-white bg-blue-700">
                 Case Study
@@ -136,7 +136,7 @@ export default function MindSpace() {
               </strong>{" "}
               <p className="text-xs md:text-sm lg:text-lg text-gray-700 leading-relaxed">
                 To combat navigation friction, the home screen centers around a
-                dynamic "Continue Session" card. This smart feature ensures that
+                dynamic **&quot;Continue Session&quot;** card. This smart feature ensures that
                 with one tap, users—whether pursuing a multi-day meditation
                 course or continuing a journal entry—pick up exactly where they
                 left off. Navigation is simplified to a clear four-tab
@@ -149,7 +149,7 @@ export default function MindSpace() {
               </strong>{" "}
               <p className="text-xs md:text-sm lg:text-lg text-gray-700 leading-relaxed">
                 To combat navigation friction, the home screen centers around a
-                dynamic "Continue Session" card. This smart feature ensures that
+                dynamic **&quot;Continue Session&quot;** card. This smart feature ensures that
                 with one tap, users—whether pursuing a multi-day meditation
                 course or continuing a journal entry—pick up exactly where they
                 left off. Navigation is simplified to a clear four-tab
@@ -176,7 +176,7 @@ export default function MindSpace() {
               <p className="text-xs md:text-sm lg:text-lg text-gray-700 leading-relaxed">
                 The UI employs a high-contrast visual design to maximize
                 accessibility and hierarchy, ensuring clickable elements are
-                clearly identifiable. Crucially, a dedicated "Progress" tab
+                clearly identifiable. Crucially, a dedicated **&quot;Progress&quot;** tab
                 provides clear, visual feedback on user streaks and course
                 completion, directly resolving the lack of progress awareness
                 and promoting sustained engagement.
@@ -185,11 +185,12 @@ export default function MindSpace() {
           </ul>
         </section>
         <section className="flex flex-col p-4 md:p-8 lg:p-12 mx-8 lg:mx-28 mb-20">
-            <h2 className="text-lg md:text-2xl lg:text-3xl font-semibold mb-6">
-                Conclusion </h2>
-            <p className="text-xs md:text-sm lg:text-lg text-gray-700 leading-relaxed">
-                MindSpace serves as a compelling case study illustrating how focused user research can drive superior product design. By deliberately addressing the fundamental flaws of market leaders—namely clutter, friction, and aggressive monetization—MindSpace provides a conceptually more thoughtful and trustworthy path to digital wellness, setting a higher standard for the industry.
-            </p>
+          <h2 className="text-lg md:text-2xl lg:text-3xl font-semibold mb-6">
+            Conclusion{" "}
+          </h2>
+          <p className="text-xs md:text-sm lg:text-lg text-gray-700 leading-relaxed">
+            MindSpace serves as a compelling case study illustrating how focused user research can drive superior product design. By deliberately addressing the fundamental flaws of market leaders—namely clutter, friction, and aggressive monetization—MindSpace provides a conceptually more thoughtful and trustworthy path to digital wellness, setting a higher standard for the industry.
+          </p>
         </section>
       </main>
     </div>

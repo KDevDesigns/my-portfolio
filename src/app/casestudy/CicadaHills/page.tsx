@@ -137,12 +137,12 @@ export default function CicadaHills() {
             <p className="text-justify my-4">
               During my initial interview with the co-owner, she detailed a
               workflow that was both time-consuming and out of sync with the
-              venue's premium image. The core problem was a disconnect between
+              venue&apos;s premium image. The core problem was a disconnect between
               the high-quality experience offered on-site and the clunky,
               inefficient process customers faced online.
             </p>
             <p className="font-semibold my-2">
-              The co-owner’s goals were clear:
+              The co-owner&apos;s goals were clear:
             </p>
             <ul className="list-disc list-inside gap-2 my-4">
               <li>Expand visibility beyond Facebook.</li>
