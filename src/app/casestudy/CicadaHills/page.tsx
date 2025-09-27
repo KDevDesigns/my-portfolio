@@ -60,8 +60,12 @@ export default function CicadaHills() {
       <section className="lg:mx-32 md:mx-24 sm:mx-16 mx-auto overflow-hidden">
         {/*Home Nav*/}
         <motion.div className="flex p-16 lg:px-16 gap-12">
-          <Link href="/" className="flex justify-center gap-4 font-medium place-content-center">
-            <MoveLeft />Back
+          <Link
+            href="/"
+            className="flex justify-center gap-4 font-medium place-content-center"
+          >
+            <MoveLeft />
+            Back
           </Link>
         </motion.div>
         {/* Hero Section */}
@@ -137,9 +141,9 @@ export default function CicadaHills() {
             <p className="text-justify my-4">
               During my initial interview with the co-owner, she detailed a
               workflow that was both time-consuming and out of sync with the
-              venue&apos;s premium image. The core problem was a disconnect between
-              the high-quality experience offered on-site and the clunky,
-              inefficient process customers faced online.
+              venue&apos;s premium image. The core problem was a disconnect
+              between the high-quality experience offered on-site and the
+              clunky, inefficient process customers faced online.
             </p>
             <p className="font-semibold my-2">
               The co-owner&apos;s goals were clear:
@@ -384,9 +388,9 @@ export default function CicadaHills() {
 
           <div>
             <TransformWrapper>
-      <TransformComponent>
-            <Image src={FullWireframe} alt={"FullHifi"} />
-            </TransformComponent>
+              <TransformComponent>
+                <Image src={FullWireframe} alt={"FullHifi"} />
+              </TransformComponent>
             </TransformWrapper>
           </div>
         </div>
@@ -439,23 +443,21 @@ export default function CicadaHills() {
             </li>
           </ul>
 
-          <div
-            className="py-6 flex flex-col gap-8 md:justify-center md:items-center"
-          >
-             <div>
-            <TransformWrapper>
-      <TransformComponent>
-            <Image src={FullHifi} alt="FullHifi" />
-            </TransformComponent>
-            </TransformWrapper>
-          </div>
-          <div>
-            <TransformWrapper>
-      <TransformComponent>
-            <Image src={FullHifiv2} alt="FullHifi" />
-            </TransformComponent>
-            </TransformWrapper>
-          </div>
+          <div className="py-6 flex flex-col gap-8 md:justify-center md:items-center">
+            <div>
+              <TransformWrapper>
+                <TransformComponent>
+                  <Image src={FullHifi} alt="FullHifi" />
+                </TransformComponent>
+              </TransformWrapper>
+            </div>
+            <div>
+              <TransformWrapper>
+                <TransformComponent>
+                  <Image src={FullHifiv2} alt="FullHifi" />
+                </TransformComponent>
+              </TransformWrapper>
+            </div>
           </div>
         </div>
         <div className="p-16 lg:px-32">
@@ -475,12 +477,12 @@ export default function CicadaHills() {
           >
             A simple admin dashboard was built to manage bookings, including:
           </motion.p>
-         
+
           <div>
             <TransformWrapper>
-      <TransformComponent>
-            <Image src={FullHifiAdmin} alt={"FullHifi"} />
-            </TransformComponent>
+              <TransformComponent>
+                <Image src={FullHifiAdmin} alt={"FullHifi"} />
+              </TransformComponent>
             </TransformWrapper>
           </div>
         </div>
@@ -532,26 +534,7 @@ export default function CicadaHills() {
         </div>
         <Separator className="my-1 border-1 w-6xl mx-auto" />
         <div className="p-16 lg:px-32">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            className="text-3xl font-medium text-teal-700"
-          >
-            The Impact
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            className="py-4"
-          >
-            Cicada Hills moved from a manual, messy process to a professional,
-            trusted venue. Guests now book with confidence, and the owner has
-            more control, visibility, and credibility. The new branding also
-            positions Cicada Hills more competitively in the local events
-            market.
-          </motion.p>
+          
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -570,7 +553,7 @@ export default function CicadaHills() {
             </div>
           </motion.div>
         </div>
-        <Separator className="my-1 border-1 w-6xl mx-auto" />
+  
         <div className="p-16 lg:px-32">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -615,44 +598,10 @@ export default function CicadaHills() {
             questions.
           </motion.p>
         </div>
-        <Separator className="my-1 border-1 w-6xl mx-auto" />
-        <div className="p-16 lg:px-32">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            className="text-3xl font-medium text-teal-700 my-4"
-          >
-            View More Case Studies?
-          </motion.h1>
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.5 }}
-            className="flex flex-col md:flex-row gap-12"
-          >
-            <motion.div variants={itemVariants} className="flex-1/2">
-              <Card>
-                <Image src={ImagePlaceholder} alt={""} />
-                <CardTitle className="px-4 text-2xl">MindSpace</CardTitle>
-                <CardDescription className="px-4">
-                  Mobile App Case Study
-                </CardDescription>
-              </Card>
-            </motion.div>
-            <motion.div variants={itemVariants} className="flex-1/2">
-              <Card>
-                <Image src={ImagePlaceholder} alt={""} />
-                <CardTitle className="px-4 text-2xl">MindSpace</CardTitle>
-                <CardDescription className="px-4">
-                  Mobile App Case Study
-                </CardDescription>
-              </Card>
-            </motion.div>
-          </motion.div>
-        </div>
-<Separator className="my-1 border-1 w-6xl mx-auto" />
+        
+          
+
+
         <footer className="py-8">
           <div className="mx-auto max-w-6xl px-6 flex items-center justify-between">
             <p className="text-sm text-slate-500 dark:text-slate-400">

@@ -22,17 +22,29 @@ type Props = {
   image: string | StaticImageData;
   link?: string;
   locked?: boolean;
+  ctaType?: "prototype" | "case-study" | "project"; // Add this line
 };
 
 const normalize = (l?: string) =>
   l ? (l.startsWith("#") || l.startsWith("/") ? l : `/${l}`) : undefined;
 
-function LockedDialog() {
+function getCtaLabel(type?: "prototype" | "case-study" | "project") {
+  switch (type) {
+    case "case-study":
+      return "View Case Study";
+    case "project":
+      return "View Project";
+    default:
+      return "View Prototype";
+  }
+}
+
+function LockedDialog({ ctaLabel = "View Prototype" }: { ctaLabel?: string }) {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
         <Button className="bg-[#7A382B] hover:bg-[#5f2e23] text-white font-medium flex items-center gap-2 mt-3">
-          <Lock className="w-4 h-4" /> View Prototype
+          <Lock className="w-4 h-4" /> {ctaLabel}
         </Button>
       </AlertDialogTrigger>
 
@@ -59,8 +71,9 @@ function LockedDialog() {
   );
 }
 
-export default function ProjectCard({ title, desc, image, link, locked }: Props) {
+export default function ProjectCard({ title, desc, image, link, locked, ctaType }: Props) {
   const href = normalize(link);
+  const ctaLabel = getCtaLabel(ctaType);
 
   return (
     <Card className="group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-lg transition-shadow duration-300">
@@ -85,14 +98,13 @@ export default function ProjectCard({ title, desc, image, link, locked }: Props)
 
         {/* CTA Button */}
         {locked ? (
-          <LockedDialog />
+          <LockedDialog ctaLabel={ctaLabel} />
         ) : href ? (
           <Button
             asChild
             className="bg-[#7A382B] hover:bg-[#5f2e23] text-white font-medium mt-3"
           >
-            {/* Use Next Link (no target) so it opens in the same tab */}
-            <Link href={href}>View Prototype</Link>
+            <Link href={href}>{ctaLabel}</Link>
           </Button>
         ) : null}
       </div>

@@ -81,9 +81,9 @@ export default function NavigationBar() {
               </div>
             );
           })}
-          <Button className="bg-[#7A382B] hover:bg-[#5f2e23] text-white shadow-sm transition hover:scale-[1.03]">
+          {/* <Button className="bg-[#7A382B] hover:bg-[#5f2e23] text-white shadow-sm transition hover:scale-[1.03]">
             Download CV
-          </Button>
+          </Button> */}
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -119,11 +119,11 @@ export default function NavigationBar() {
                 </Link>
               </motion.div>
             ))}
-            <motion.div variants={itemVariants}>
+            {/* <motion.div variants={itemVariants}>
               <Button className="bg-[#7A382B] hover:bg-[#5f2e23] text-white w-full">
                 Download CV
               </Button>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         )}
       </AnimatePresence>

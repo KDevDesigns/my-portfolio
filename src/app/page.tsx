@@ -105,9 +105,10 @@ export default function HomePage() {
               <motion.div variants={itemVariants}>
                 <ProjectCard
                   title="Cicada Hills"
-                  desc="Modular mental health interface reducing overwhelm and boosting engagement through guided flows."
+                  desc="Designing an easy-to-use website where guests can see real-time availability on a calendar and book their stay or event instantly online."
                   image={CicadaHills}
                   link="/casestudy/CicadaHills"
+                  ctaType="case-study" // This will show "View Case Study"
                 />
               </motion.div>
               <motion.div variants={itemVariants}>
@@ -116,6 +117,7 @@ export default function HomePage() {
                   desc="CancerLine Companion helps cancer patients navigate treatment with confidence using guided flows and accessible design."
                   image={CancerLine}
                   locked
+                  ctaType="case-study" // This will show "View Prototype"
                 />
               </motion.div>
               <motion.div variants={itemVariants}>
@@ -124,6 +126,7 @@ export default function HomePage() {
                   desc="Modular mental health interface reducing overwhelm and boosting engagement through guided flows."
                   image={MindSpace}
                   link="/casestudy/Mindspace"
+                  ctaType="case-study" // This will show "View Project"
                 />
               </motion.div>
               
@@ -135,30 +138,15 @@ export default function HomePage() {
           {/* Web & Mobile */}
           <TabsContent value="web-mobile" className="mt-12">
             
-             <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate="show" // Use `animate` for a smooth transition on tab change
-              className="grid grid-cols-1 md:grid-cols-2 gap-12"
+              <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-12"
             >
-              <motion.div variants={itemVariants}>
-                <ProjectCard
-                  title="Cicada Hills"
-                  desc="Modular mental health interface reducing overwhelm and boosting engagement through guided flows."
-                  image={CicadaHills}
-                  link=""
-                />
-              </motion.div>
-              <motion.div variants={itemVariants}>
-                <ProjectCard
-                  title="Cicada Hills"
-                  desc="Modular mental health interface reducing overwhelm and boosting engagement through guided flows."
-                  image={CicadaHills}
-                  link=""
-                />
-              </motion.div>
-              
-              
+              <Card className="p-6 flex items-center justify-center">
+                <p className="text-gray-400">Web&Mobile projects is in development coming soon…</p>
+              </Card>
             </motion.div>
             
           </TabsContent>
