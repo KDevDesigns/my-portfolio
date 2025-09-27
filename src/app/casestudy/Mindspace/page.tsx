@@ -313,11 +313,11 @@ export default function MindSpace() {
           <ul className="list-decimal list-inside mt-4 space-y-2 text-xs md:text-sm lg:text-lg text-gray-700 leading-relaxed">
             <li className="flex flex-col gap-4">
               <strong className="text-blue-700">
-                The Value Proposition First (The "Taste")
+                The Value Proposition First (The &quot;Taste&quot;)
               </strong>{" "}
               <p className="text-xs md:text-sm lg:text-lg text-gray-700 leading-relaxed">
                 The flow intentionally directs the user into a core feature
-                (e.g., mood tracking: "How are you feeling right now?") before
+                (e.g., mood tracking: &quot;How are you feeling right now?&quot;) before
                 presenting the sign-up form. This leverages the Reciprocity
                 Principle in UX: by providing immediate utility, the design
                 earns the right to request commitment. The user invests effort
@@ -367,7 +367,7 @@ export default function MindSpace() {
                 The UI employs a high-contrast visual design to maximize
                 accessibility and hierarchy, ensuring clickable elements are
                 clearly identifiable. Crucially, a dedicated
-                **&quot;Progress&quot;** tab provides clear, visual feedback on
+                <strong> &quot;Progress&quot; </strong> tab provides clear, visual feedback on
                 user streaks and course completion, directly resolving the lack
                 of progress awareness and promoting sustained engagement.
               </p>
